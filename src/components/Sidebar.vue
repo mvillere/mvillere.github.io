@@ -97,6 +97,11 @@
         <span>{{ tab.label }}</span>
       </button>
     </nav>
+
+    <!-- Copyright -->
+    <div class="shrink-0 px-4 py-3 border-t border-shell-border">
+      <p class="text-[10px] text-slate-700">© Michael Villere 2026</p>
+    </div>
   </aside>
 </template>
 

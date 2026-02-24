@@ -1,0 +1,52 @@
+Bio options for Michael Villere (@NiftyMike)
+See: src/components/tabs/AboutTab.vue - update the bio paragraph there if modified.
+────────────────────────────────────────────────────────────────────────────────
+
+SHORT (1–2 sentences - concise, lead with the strongest credential)
+──────────────────────────────────────────────────────────────────
+Michael Villere is a Web3 engineer and entrepreneur who co-founded NFT Culture in 2021.
+He has deployed 30+ smart contracts across Ethereum and EVM networks - his code powers
+Ian Cheng's 3FACE (2022), an adaptive generative portrait acquired by the MoMA.
+
+
+MEDIUM (4–5 sentences - range of work, key artists, Web2 context)
+──────────────────────────────────────────────────────────────────
+Michael Villere is a Web3 engineer and entrepreneur. He co-founded NFT Culture - a media
+brand and development studio at the intersection of art, culture, and the blockchain - and
+has shipped 30+ smart contracts to Ethereum and EVM networks, including Bitcoin Ordinals work.
+His projects span collaboration with artists Ian Cheng, Leo Villareal, JR, and Refik Anadol;
+his code powers Ian Cheng's adaptive generative portrait 3FACE (2022), acquired by the MoMA.
+Before Web3, he spent 13 years building enterprise EdTech SaaS and managing distributed
+engineering teams serving millions of students.
+
+
+LONG (full professional narrative)
+────────────────────────────────────────────────────────────────────────────────
+Michael Villere is a Web3 engineer, entrepreneur, and technical lead with deep roots in both
+blockchain and enterprise software. He co-founded NFT Culture in 2021 - a media brand and
+development studio at the intersection of art, culture, and the blockchain - and has served
+as CTO ever since. Across NFT Culture and client work, Michael has deployed 30+ smart contracts
+to Ethereum mainnet and EVM-compatible networks, shipped full-stack minting platforms, backend
+infrastructure, and open source tooling under the NFT Culture Labs umbrella.
+
+His on-chain work has powered projects for world-renowned artists including Ian Cheng, Leo
+Villareal, JR, and Refik Anadol - notably Ian Cheng's adaptive generative portrait 3FACE (2022),
+which reads its owner's wallet history to generate a personalized visual identity, acquired by
+the permanent collection of the MoMA.
+
+Before moving into Web3, Michael spent 13 years as a senior engineering leader in EdTech,
+architecting and managing large-scale SaaS products that collectively served over 15 million
+students across approximately 20,000 schools and accounted for ~$50M in annual revenue.
+He holds a B.S. in Computer Science from the University of Texas at Dallas.
+
+
+NOTES FOR FUTURE UPDATES
+────────────────────────────────────────────────────────────────────────────────
+- Total contract count: update "30+" as new projects are added
+- Artist list: Ian Cheng, Leo Villareal, JR, Refik Anadol - add new names as appropriate
+- 3FACE / MoMA: the anchor credential - keep this in all versions
+- EdTech stats (Version 2 source): 15M+ students, ~20,000 schools, ~$50M ARR
+- Do not include: personal info (family, ranch, etc.) - those belong in the
+  "personal" section at the bottom of the About tab (to be built in phase 2)
+- Company mentions: keep focused on NFT Culture; other roles belong in the
+  roles section below the bio, not in the bio itself

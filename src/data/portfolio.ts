@@ -15,6 +15,7 @@ export interface Project {
   links: ProjectLink[];
   status: ProjectStatus;
   year: string;
+  featured?: boolean;
   org?: string;
   chain?: string;
 }
@@ -28,58 +29,128 @@ export interface Article {
   tags: string[];
 }
 
-// ─── NFT Smart Contracts ──────────────────────────────────────────────────────
-// Smart contracts that create NFTs or are directly part of the NFT
-// creation / operational stack.
+// ─── NFTs ─────────────────────────────────────────────────────────────────────
+// EVM smart contracts and Bitcoin Ordinals inscriptions.
+// On-chain authorship: implementation contracts carry the tag
+// `@author @NiftyMike | @NFTCulture` in the source.
 
 export const nftContracts: Project[] = [
+  // ── Flagship ──────────────────────────────────────────────────────────────
   {
-    id: 'nft-placeholder-1',
-    title: '[PLACEHOLDER] Project Name',
-    description: '[PLACEHOLDER] Description of this NFT smart contract and its role in the project.',
-    tags: ['Solidity', 'ERC-721', 'Ethereum'],
-    links: [],
-    status: 'placeholder',
-    year: '20XX',
+    id: 'nft-cult',
+    title: 'The NFT Cult',
+    description:
+      "NFT Culture's in-house supporter token - one of the earliest projects under the NFT Culture banner and a hands-on proof-of-concept for the ETH/NFT ecosystem. Built to demonstrate technical command of on-chain NFT mechanics from day one.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'NFT Culture'],
+    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x5d75c1b764afd64fe02a28b5eff79e2f81db5bad' }],
+    status: 'live',
+    year: 'Sep 2021',
+    chain: 'Ethereum',
+    featured: true,
   },
   {
-    id: 'nft-placeholder-2',
-    title: '[PLACEHOLDER] Project Name',
-    description: '[PLACEHOLDER] Description of this NFT smart contract and its role in the project.',
-    tags: ['Solidity', 'ERC-1155', 'Ethereum'],
-    links: [],
-    status: 'placeholder',
-    year: '20XX',
+    id: '3face-ian-cheng',
+    title: '3FACE by Ian Cheng',
+    description:
+      "Generative portrait NFT by artist Ian Cheng, held in the permanent collection of the MoMA. Each work reads its owner's on-chain wallet history through a personality model developed by Cheng, producing a continuously evolving visual portrait of the collector's digital identity. Collectors can refresh their 3FACE as their wallet evolves.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'MoMA'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0xd20969460645Add745f3F490d0f7AeE1Be60b741' },
+      { label: 'MoMA Collection', url: 'https://www.moma.org/collection/works/442076' },
+    ],
+    status: 'live',
+    year: 'Aug 2022',
+    chain: 'Ethereum',
+    featured: true,
   },
   {
-    id: 'nft-placeholder-3',
-    title: '[PLACEHOLDER] Project Name',
-    description: '[PLACEHOLDER] Description of this NFT smart contract and its role in the project.',
-    tags: ['Solidity', 'ERC-721A', 'Ethereum'],
+    id: 'keith-haring-pixel-pioneer',
+    title: 'Keith Haring: Pixel Pioneer',
+    description:
+      "Five unique digital drawings created by Keith Haring on an Amiga computer in the mid-1980s, minted on Ethereum by the Keith Haring Foundation. Previously accessible only via floppy disk - the collection sold at Christie's for $1.5M. Multi-contract stack; primary implementation shown, additional contracts to be linked.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', "Christie's", 'Keith Haring Foundation'],
+    links: [
+      {
+        label: 'Contract (primary)',
+        url: 'https://etherscan.io/address/0x8CD834258d000166769733Dfb5fB6fD6E43dB4e7',
+      },
+      {
+        label: "Christie's Auction",
+        url: 'https://onlineonly.christies.com/s/keith-haring-pixel-pioneer/overview/3479',
+      },
+    ],
+    status: 'live',
+    year: 'Sep 2023',
+    chain: 'Ethereum',
+    featured: true,
+  },
+
+  // ── Additional Work ────────────────────────────────────────────────────────
+  {
+    id: 'cosmic-bloom',
+    title: 'Cosmic Bloom by Leo Villareal',
+    description:
+      "Generative NFT collection by light artist Leo Villareal - the second in his Cosmologies series. Produced with custom live code, each work features intricate geometric forms in perpetual non-repeating motion, extending Villareal's large-scale light sculpture practice into purely digital works.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art'],
+    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x667D28Ca8a8F4391Fe13c92d36e60c7615D2f8db' }],
+    status: 'live',
+    year: 'Dec 2022',
+    chain: 'Ethereum',
+  },
+  {
+    id: 'moonray-presale',
+    title: 'Moonray Presale Pass',
+    description:
+      'Presale entry pass for Moonray, a surreal action RPG featuring next-gen graphics and Web3 mechanics.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Gaming'],
+    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x4d57b36c1555b48a63feab9f90d38a9b7ebc4419' }],
+    status: 'live',
+    year: 'Oct 2021',
+    chain: 'Ethereum',
+  },
+  {
+    id: 'ordinals-placeholder-1',
+    title: '[PLACEHOLDER] Ordinals Project',
+    description: '[PLACEHOLDER] Description of this Bitcoin Ordinals inscription project.',
+    tags: ['Bitcoin', 'Ordinals'],
     links: [],
     status: 'placeholder',
     year: '20XX',
+    chain: 'Bitcoin (Ordinals)',
   },
 ];
 
-// ─── Infrastructure / Tool Smart Contracts ────────────────────────────────────
-// Smart contracts not directly tied to NFT creation — payment splitters,
-// access control, utility contracts, etc.
+// ─── Crypto Infra ─────────────────────────────────────────────────────────────
+// Infrastructure and tooling - on-chain utility contracts, off-chain
+// tooling, and anything crypto-adjacent that isn't directly NFT creation.
 
 export const infraContracts: Project[] = [
   {
-    id: 'infra-placeholder-1',
-    title: '[PLACEHOLDER] Contract Name',
-    description: '[PLACEHOLDER] Description of what this infrastructure contract does and the problem it solves.',
-    tags: ['Solidity', 'Ethereum'],
-    links: [],
-    status: 'placeholder',
-    year: '20XX',
+    id: 'gas-refunder',
+    title: 'Gas Refunder',
+    description:
+      'Community-available utility contract for issuing bulk ETH refunds. Simplifies and reduces the cost of sending gas refunds to multiple recipients in a single transaction.',
+    tags: ['Solidity', 'Ethereum', 'Utility'],
+    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x9916b6b525bd114211cb9afcc926f06ca914e1a2' }],
+    status: 'live',
+    year: 'Sep 2021',
+    chain: 'Ethereum',
   },
   {
-    id: 'infra-placeholder-2',
-    title: '[PLACEHOLDER] Contract Name',
-    description: '[PLACEHOLDER] Description of what this infrastructure contract does and the problem it solves.',
+    id: 'ordinals-minting-tool',
+    title: 'Ordinals Minting Tool',
+    description:
+      'Pure web-based tool for minting Bitcoin Ordinals inscriptions without a local node. Open source release planned.',
+    tags: ['TypeScript', 'Bitcoin', 'Ordinals', 'Web3'],
+    links: [],
+    status: 'coming-soon',
+    year: '2023',
+    chain: 'Bitcoin (Ordinals)',
+  },
+  {
+    id: 'infra-placeholder-1',
+    title: '[PLACEHOLDER] Contract / Tool',
+    description: '[PLACEHOLDER] Description of what this crypto infrastructure item does and the problem it solves.',
     tags: ['Solidity', 'Ethereum'],
     links: [],
     status: 'placeholder',
@@ -133,7 +204,7 @@ export const frontEnds: Project[] = [
   {
     id: 'fe-placeholder-1',
     title: '[PLACEHOLDER] Mint Site',
-    description: '[PLACEHOLDER] Description of this mint microsite — the project, stack, and any notable features.',
+    description: '[PLACEHOLDER] Description of this mint microsite - the project, stack, and any notable features.',
     tags: ['Vue', 'Ethers.js', 'Web3'],
     links: [],
     status: 'placeholder',
@@ -142,7 +213,7 @@ export const frontEnds: Project[] = [
   {
     id: 'fe-placeholder-2',
     title: '[PLACEHOLDER] Mint Site',
-    description: '[PLACEHOLDER] Description of this mint microsite — the project, stack, and any notable features.',
+    description: '[PLACEHOLDER] Description of this mint microsite - the project, stack, and any notable features.',
     tags: ['React', 'Ethers.js', 'Web3'],
     links: [],
     status: 'placeholder',
@@ -160,7 +231,7 @@ export const frontEnds: Project[] = [
 ];
 
 // ─── Back Ends ────────────────────────────────────────────────────────────────
-// Infrastructure and services — primarily enabling mint microsites,
+// Infrastructure and services - primarily enabling mint microsites,
 // but not exclusively.
 
 export const backEnds: Project[] = [

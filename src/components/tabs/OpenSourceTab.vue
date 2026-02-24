@@ -5,7 +5,7 @@
       <span class="text-amber-400 shrink-0 mt-px">◎</span>
       <span>
         Testarossa and Shakespeare are NFT Culture internal libraries. Open source releases are
-        planned — links will appear here when available.
+        planned - links will appear here when available.
       </span>
     </div>
 
