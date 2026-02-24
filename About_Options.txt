@@ -2,51 +2,65 @@ Bio options for Michael Villere (@NiftyMike)
 See: src/components/tabs/AboutTab.vue - update the bio paragraph there if modified.
 ────────────────────────────────────────────────────────────────────────────────
 
-SHORT (1–2 sentences - concise, lead with the strongest credential)
-──────────────────────────────────────────────────────────────────
-Michael Villere is a Web3 engineer and entrepreneur who co-founded NFT Culture in 2021.
-He has deployed 30+ smart contracts across Ethereum and EVM networks - his code powers
-Ian Cheng's 3FACE (2022), an adaptive generative portrait acquired by the MoMA.
-
-
-MEDIUM (4–5 sentences - range of work, key artists, Web2 context)
-──────────────────────────────────────────────────────────────────
-Michael Villere is a Web3 engineer and entrepreneur. He co-founded NFT Culture - a media
-brand and development studio at the intersection of art, culture, and the blockchain - and
-has shipped 30+ smart contracts to Ethereum and EVM networks, including Bitcoin Ordinals work.
-His projects span collaboration with artists Ian Cheng, Leo Villareal, JR, and Refik Anadol;
-his code powers Ian Cheng's adaptive generative portrait 3FACE (2022), acquired by the MoMA.
-Before Web3, he spent 13 years building enterprise EdTech SaaS and managing distributed
-engineering teams serving millions of students.
-
-
-LONG (full professional narrative)
+POSITIONING NOTE
 ────────────────────────────────────────────────────────────────────────────────
-Michael Villere is a Web3 engineer, entrepreneur, and technical lead with deep roots in both
-blockchain and enterprise software. He co-founded NFT Culture in 2021 - a media brand and
-development studio at the intersection of art, culture, and the blockchain - and has served
-as CTO ever since. Across NFT Culture and client work, Michael has deployed 30+ smart contracts
-to Ethereum mainnet and EVM-compatible networks, shipped full-stack minting platforms, backend
-infrastructure, and open source tooling under the NFT Culture Labs umbrella.
+Target: Director / Engineering Manager level roles.
+Angle: Seasoned engineering leader who has managed teams, architected systems, and
+       is an early, heavy adopter of AI-driven development tooling. Web3 experience
+       is a differentiator and credential, not the primary identity.
+Do NOT lead with "Web3 engineer" - lead with "engineering leader."
 
-His on-chain work has powered projects for world-renowned artists including Ian Cheng, Leo
-Villareal, JR, and Refik Anadol - notably Ian Cheng's adaptive generative portrait 3FACE (2022),
-which reads its owner's wallet history to generate a personalized visual identity, acquired by
-the permanent collection of the MoMA.
 
-Before moving into Web3, Michael spent 13 years as a senior engineering leader in EdTech,
-architecting and managing large-scale SaaS products that collectively served over 15 million
-students across approximately 20,000 schools and accounted for ~$50M in annual revenue.
-He holds a B.S. in Computer Science from the University of Texas at Dallas.
+SHORT (1–2 sentences)
+──────────────────────────────────────────────────────────────────
+Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years
+of experience building and managing software teams across SaaS, EdTech, and Web3.
+
+
+MEDIUM (4–5 sentences)
+──────────────────────────────────────────────────────────────────
+Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years
+of experience across SaaS, EdTech, and Web3. He co-founded NFT Culture in 2021
+and serves as CTO, and spent 13 years prior as a Senior Software Development
+Manager at Edmentum, leading distributed teams on large-scale K-12 platforms
+serving over 15 million students. An early and heavy adopter of AI development
+tooling, he brings deep experience both writing code and managing the engineering
+organizations that ship it. His technical work includes 30+ smart contracts
+deployed to Ethereum — among them Ian Cheng's 3FACE (2022), acquired by the MoMA.
+
+
+LONG (full narrative)
+────────────────────────────────────────────────────────────────────────────────
+Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years
+of experience building and managing software across SaaS, EdTech, and Web3. He
+co-founded NFT Culture in 2021 and serves as CTO of its media brand and software
+consulting arm, NFT Culture Labs.
+
+Prior to founding NFT Culture, Michael spent 13 years as a Senior Software
+Development Manager at Edmentum, where he led distributed engineering teams and
+served as principal architect on large-scale K-12 SaaS platforms that collectively
+served over 15 million students across approximately 20,000 schools, accounting
+for ~$50M in annual revenue.
+
+An early and heavy adopter of AI development tooling, Michael brings hands-on
+experience integrating AI-assisted workflows into engineering teams and believes
+the next significant leverage point for engineering organizations is the systematic
+adoption of these practices across their development staff.
+
+His technical work spans the stack — from Solidity smart contracts (30+ deployments
+to Ethereum mainnet and EVM networks, including Ian Cheng's 3FACE, acquired by the
+MoMA) to full-stack minting platforms, backend infrastructure, and open source
+libraries. He holds a B.S. in Computer Science from the University of Texas at Dallas.
 
 
 NOTES FOR FUTURE UPDATES
 ────────────────────────────────────────────────────────────────────────────────
-- Total contract count: update "30+" as new projects are added
-- Artist list: Ian Cheng, Leo Villareal, JR, Refik Anadol - add new names as appropriate
-- 3FACE / MoMA: the anchor credential - keep this in all versions
-- EdTech stats (Version 2 source): 15M+ students, ~20,000 schools, ~$50M ARR
+- Lead identity: "seasoned engineering leader" - not "Web3 engineer"
+- AI tooling angle: keep prominent - this is the forward-looking differentiator
+- Web3 / NFT Culture: supporting credential, not the headline
+- 3FACE / MoMA: the anchor technical credential - keep in medium + long
+- EdTech scale: 15M+ students, ~20,000 schools, ~$50M ARR
+- Contract count: update "30+" as new projects are added
+- Artist list: Ian Cheng, Leo Villareal, JR, Refik Anadol
 - Do not include: personal info (family, ranch, etc.) - those belong in the
   "personal" section at the bottom of the About tab (to be built in phase 2)
-- Company mentions: keep focused on NFT Culture; other roles belong in the
-  roles section below the bio, not in the bio itself

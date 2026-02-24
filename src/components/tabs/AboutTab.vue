@@ -11,16 +11,15 @@
           <span class="text-base font-semibold text-slate-100">Michael Villere</span>
           <span class="text-sm text-slate-500">@NiftyMike</span>
         </div>
-        <p class="text-xs text-cyan-400 mb-3">Co-Founder &amp; CTO · NFT Culture</p>
+        <p class="text-xs text-cyan-400 mb-3">Engineering Leader · Co-Founder &amp; CTO, NFT Culture</p>
         <!--
           BIO TEXT
           See About_Options.txt in the project root for Short / Medium / Long variants.
           Update the paragraph text below when you change the bio.
         -->
         <p class="text-sm text-slate-400 leading-relaxed">
-          Michael Villere is a Web3 engineer and entrepreneur who co-founded NFT Culture in 2021.
-          He has deployed 30+ smart contracts across Ethereum and EVM networks - his code powers
-          Ian Cheng's 3FACE (2022), an adaptive generative portrait acquired by the MoMA.
+          Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years of
+          experience building and managing software teams across SaaS, EdTech, and Web3.
         </p>
       </div>
     </div>
