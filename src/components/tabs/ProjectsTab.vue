@@ -6,12 +6,11 @@
     >
       <span class="text-cyan-500 shrink-0 mt-px">◈</span>
       <span>
-        Authorship of EVM contracts can be verified on-chain — the implementation contract for each
-        project carries the comment
+        Authorship of projects can be verified on-chain: the implementation of contracts or inscriptions typically carries the comment
         <code class="text-cyan-300 bg-shell-card px-1 rounded text-[11px]"
           >@author @NiftyMike | @NFTCulture</code
         >
-        in the verified source.
+        in verified source.
       </span>
     </div>
 
@@ -19,7 +18,7 @@
     <div>
       <p class="text-[10px] font-medium text-slate-600 tracking-widest uppercase mb-3">featured</p>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-        <ProjectCard v-for="project in featured" :key="project.id" :project="project" />
+        <ProjectCard v-for="project in featured" :key="project.id" :project="project" :initial-expanded="true" />
       </div>
     </div>
 

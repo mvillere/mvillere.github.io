@@ -74,9 +74,9 @@ import { ref, computed } from 'vue';
 import { ChevronDown } from 'lucide-vue-next';
 import type { Project } from '../data/portfolio';
 
-const props = defineProps<{ project: Project }>();
+const props = defineProps<{ project: Project; initialExpanded?: boolean }>();
 
-const isExpanded = ref(false);
+const isExpanded = ref(props.initialExpanded ?? false);
 const COLLAPSED_TAG_LIMIT = 3;
 
 const isPlaceholder = computed(() => props.project.status === 'placeholder');
