@@ -31,6 +31,7 @@ export interface Article {
   url: string | null;
   publishedAt: string;
   tags: string[];
+  role?: 'author' | 'contributor';
 }
 
 // ─── NFTs ─────────────────────────────────────────────────────────────────────
@@ -294,27 +295,31 @@ export const authorProfileUrl = 'https://www.nftculture.com/author/michael/';
 
 export const articles: Article[] = [
   {
-    id: 'article-placeholder-1',
-    title: '[PLACEHOLDER] Article Title',
-    description: '[PLACEHOLDER] Brief summary of what this article covers.',
-    url: null,
-    publishedAt: '20XX',
-    tags: ['Web3', 'NFT'],
+    id: 'nfts-and-anonymity',
+    title: 'Our Stance on NFTs and Anonymity',
+    description:
+      'Examining how anonymity and pseudonymity function in the NFT space — when they are acceptable and when creators should maintain transparent identities to build trust.',
+    url: 'https://www.nftculture.com/nft-projects/our-stance-on-nfts-and-anonymity/',
+    publishedAt: '2021-07-28',
+    tags: ['Opinion', 'Community', 'NFT'],
   },
   {
-    id: 'article-placeholder-2',
-    title: '[PLACEHOLDER] Article Title',
-    description: '[PLACEHOLDER] Brief summary of what this article covers.',
-    url: null,
-    publishedAt: '20XX',
-    tags: ['DeFi', 'Analysis'],
+    id: 'nft-bill-of-rights',
+    title: 'NFT Project Bill of Rights',
+    description:
+      'A foundational framework establishing five key rights for NFT project creators and buyers — covering reveal mechanics, asset delivery, licensing, open source contracts, and accountability.',
+    url: 'https://www.nftculture.com/future-nfts/nft-project-bill-of-rights/',
+    publishedAt: '2021-06-17',
+    tags: ['Opinion', 'Standards', 'NFT'],
   },
   {
-    id: 'article-placeholder-3',
-    title: '[PLACEHOLDER] Article Title',
-    description: '[PLACEHOLDER] Brief summary of what this article covers.',
-    url: null,
-    publishedAt: '20XX',
-    tags: ['Smart Contracts', 'Tutorial'],
+    id: 'mark-cuban-qa',
+    title: 'Mark Cuban x NFT Culture Q&A',
+    description:
+      "An interview with Mark Cuban on the emerging NFT market — covering monetization potential, mainstream adoption, his investment in Mintable, and Ethereum gas fee challenges.",
+    url: 'https://www.nftculture.com/nft-art/mark-cuban-x-nft-culture-qa/',
+    publishedAt: '2021-04-05',
+    tags: ['Interview', 'NFT', 'Web3'],
+    role: 'contributor',
   },
 ];

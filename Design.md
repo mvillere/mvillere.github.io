@@ -46,20 +46,6 @@ UPPERCASE to match real `man` page conventions.
 
 ---
 
-### `git log --oneline`
-**When:** Repository history / published repos.
-**Content:** Open source repo cards — things that live in version control and have a commit history.
-**Used in:** Open Source (repos section)
-
----
-
-### `ls ~/tools/`
-**When:** Standalone tooling artifacts — scripts, CLIs, utilities.
-**Content:** Open source tool cards that don't map cleanly to a repo log.
-**Used in:** Open Source (tools section)
-
----
-
 ### `curl -s <url> | grep article`
 **When:** Fetched remote content — articles, feeds, published writing.
 **Content:** Article cards, author profiles linked to external sites.
@@ -67,19 +53,24 @@ UPPERCASE to match real `man` page conventions.
 
 ---
 
-### `find ~/contracts -name "*.sol"`
-**When:** On-chain build artifacts — smart contracts that exist as deployed files.
-**Content:** Project cards for EVM/Ordinals work.
-**Used in:** Projects (future — currently no prompt shown)
+## Tabs That Intentionally Skip This Scheme
+
+**Projects** and **Open Source** are card-heavy interfaces where the content is richer and more interactive
+(expand/collapse, links, status badges, tag clouds). Applying command prompts there would feel forced — the cards
+themselves carry enough visual identity. These two tabs are intentionally left without command chrome.
+
+The unix scheme is most effective on text-heavy, prose-like sections (About, Skills, Content, Personal) where it
+contextualizes *what kind of thing you're looking at*. On data-dense card grids it adds noise rather than signal.
 
 ---
 
 ## General Rules
 
-- Every section that renders a distinct block of content should have a command prompt above it.
+- Every prose/text section should have a command prompt above it.
 - The command should be plausible (a developer should not need to Google it), but it does not need to be
   copy-pasteable.
 - Pipe characters (`|`) and flags (`-la`, `--oneline`) add authenticity.
 - Avoid inventing commands that don't exist as real Unix utilities (e.g. no `nft-list`, `crypto-log`).
 - Fictional flags on real commands are fine (e.g. `curl --list-articles` doesn't exist but reads naturally).
 - Filenames in `cat` commands should use `kebab-case.txt` and describe the content literally.
+- Don't overuse it — the scheme should feel like seasoning, not wallpaper.

@@ -13,7 +13,7 @@
 
     <!-- Navigation -->
     <nav class="flex-1 py-3 px-2 space-y-0.5">
-      <!-- Ungrouped: About, Skills, Projects -->
+      <!-- Ungrouped: About, Skills -->
       <button
         v-for="tab in ungrouped"
         :key="tab.id"
@@ -31,14 +31,14 @@
         <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- Open Source (web3 group — label dropped per user request) -->
+      <!-- Projects + Open Source (work group) -->
       <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
       <div class="hidden sm:block px-1 pt-3 pb-1">
         <div class="h-px bg-shell-border" />
       </div>
 
       <button
-        v-for="tab in web3Group"
+        v-for="tab in workGroup"
         :key="tab.id"
         :title="tab.label"
         class="nav-item"
@@ -93,7 +93,7 @@ export interface TabConfig {
   label: string;
   icon: Component;
   path: string;
-  group: 'web3' | 'other' | null;
+  group: 'work' | 'other' | null;
 }
 
 const props = defineProps<{
@@ -104,7 +104,7 @@ const props = defineProps<{
 defineEmits<{ select: [id: string] }>();
 
 const ungrouped = props.tabs.filter((t) => t.group === null);
-const web3Group = props.tabs.filter((t) => t.group === 'web3');
+const workGroup = props.tabs.filter((t) => t.group === 'work');
 const otherGroup = props.tabs.filter((t) => t.group === 'other');
 </script>
 
