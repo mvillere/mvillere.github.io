@@ -1,14 +1,14 @@
 <template>
   <aside
-    class="w-[220px] flex-none flex flex-col h-full border-r border-shell-border bg-shell-sidebar select-none overflow-y-auto"
+    class="w-12 sm:w-[220px] flex-none flex flex-col h-full border-r border-shell-border bg-shell-sidebar select-none overflow-y-auto"
   >
     <!-- Brand -->
-    <div class="px-4 py-4 border-b border-shell-border shrink-0">
-      <div class="flex items-center gap-2">
+    <div class="px-2 sm:px-4 py-4 border-b border-shell-border shrink-0">
+      <div class="flex items-center justify-center sm:justify-start gap-2">
         <span class="text-cyan-400 text-base leading-none">◈</span>
-        <span class="text-sm font-semibold text-slate-200 tracking-tight">NiftyMike</span>
+        <span class="hidden sm:inline text-sm font-semibold text-slate-200 tracking-tight">NiftyMike</span>
       </div>
-      <p class="text-[11px] text-slate-600 mt-0.5 ml-[22px]">~/portfolio</p>
+      <p class="hidden sm:block text-[11px] text-slate-600 mt-0.5 ml-[22px]">~/portfolio</p>
     </div>
 
     <!-- Navigation -->
@@ -17,6 +17,7 @@
       <button
         v-for="tab in aboutGroup"
         :key="tab.id"
+        :title="tab.label"
         class="nav-item"
         :class="{ 'nav-item--active': activeTab === tab.id }"
         @click="$emit('select', tab.id)"
@@ -27,11 +28,12 @@
           :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
           class="shrink-0 transition-colors"
         />
-        <span>{{ tab.label }}</span>
+        <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- WEB3 divider -->
-      <div class="flex items-center gap-2 px-1 pt-3 pb-1">
+      <!-- WEB3 divider — mobile: plain rule, desktop: labeled -->
+      <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
+      <div class="hidden sm:flex items-center gap-2 px-1 pt-3 pb-1">
         <div class="h-px bg-shell-border flex-1" />
         <span class="text-[10px] font-medium text-slate-600 tracking-widest uppercase">web3</span>
         <div class="h-px bg-shell-border flex-1" />
@@ -40,6 +42,7 @@
       <button
         v-for="tab in web3Group"
         :key="tab.id"
+        :title="tab.label"
         class="nav-item"
         :class="{ 'nav-item--active': activeTab === tab.id }"
         @click="$emit('select', tab.id)"
@@ -50,11 +53,12 @@
           :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
           class="shrink-0 transition-colors"
         />
-        <span>{{ tab.label }}</span>
+        <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- WEB2 divider -->
-      <div class="flex items-center gap-2 px-1 pt-3 pb-1">
+      <!-- WEB2 divider — mobile: plain rule, desktop: labeled -->
+      <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
+      <div class="hidden sm:flex items-center gap-2 px-1 pt-3 pb-1">
         <div class="h-px bg-shell-border flex-1" />
         <span class="text-[10px] font-medium text-slate-600 tracking-widest uppercase">web2</span>
         <div class="h-px bg-shell-border flex-1" />
@@ -63,6 +67,7 @@
       <button
         v-for="tab in web2Group"
         :key="tab.id"
+        :title="tab.label"
         class="nav-item"
         :class="{ 'nav-item--active': activeTab === tab.id }"
         @click="$emit('select', tab.id)"
@@ -73,10 +78,10 @@
           :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
           class="shrink-0 transition-colors"
         />
-        <span>{{ tab.label }}</span>
+        <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- Content (rule only, no label) -->
+      <!-- Content (rule only) -->
       <div class="px-1 pt-3 pb-1">
         <div class="h-px bg-shell-border" />
       </div>
@@ -84,6 +89,7 @@
       <button
         v-for="tab in otherGroup"
         :key="tab.id"
+        :title="tab.label"
         class="nav-item"
         :class="{ 'nav-item--active': activeTab === tab.id }"
         @click="$emit('select', tab.id)"
@@ -94,12 +100,12 @@
           :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
           class="shrink-0 transition-colors"
         />
-        <span>{{ tab.label }}</span>
+        <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
     </nav>
 
-    <!-- Copyright -->
-    <div class="shrink-0 px-4 py-3 border-t border-shell-border">
+    <!-- Copyright — hidden on mobile -->
+    <div class="hidden sm:block shrink-0 px-4 py-3 border-t border-shell-border">
       <p class="text-[10px] text-slate-700">© Michael Villere 2026</p>
     </div>
   </aside>
@@ -131,9 +137,9 @@ const otherGroup = props.tabs.filter((t) => t.group === 'other');
 
 <style scoped>
 .nav-item {
-  @apply w-full flex items-center gap-2.5 px-3 py-[7px] rounded text-xs text-slate-400
-         border-l-2 border-transparent transition-colors duration-150 text-left
-         hover:bg-shell-hover hover:text-slate-200;
+  @apply w-full flex items-center justify-center sm:justify-start gap-2.5 px-3 py-[7px] rounded
+         text-xs text-slate-400 border-l-2 border-transparent transition-colors duration-150
+         text-left hover:bg-shell-hover hover:text-slate-200;
 }
 
 .nav-item--active {

@@ -12,15 +12,7 @@
           <span class="text-sm text-slate-500">@NiftyMike</span>
         </div>
         <p class="text-xs text-cyan-400 mb-3">Engineering Leader · Co-Founder &amp; CTO, NFT Culture</p>
-        <!--
-          BIO TEXT
-          See About_Options.txt in the project root for Short / Medium / Long variants.
-          Update the paragraph text below when you change the bio.
-        -->
-        <p class="text-sm text-slate-400 leading-relaxed">
-          Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years of
-          experience building and managing software teams across SaaS, EdTech, and Web3.
-        </p>
+        <p class="text-sm text-slate-400 leading-relaxed whitespace-pre-line">{{ activeBio }}</p>
       </div>
     </div>
 
@@ -125,6 +117,10 @@
 </template>
 
 <script setup lang="ts">
+import { bio, activeBioVariant } from '../../data/about';
+
+const activeBio = bio[activeBioVariant];
+
 interface Role {
   id: string;
   title: string;

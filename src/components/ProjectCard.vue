@@ -26,6 +26,11 @@
       <p class="text-xs text-slate-400 leading-relaxed">{{ project.description }}</p>
     </div>
 
+    <!-- Role attribution (only shown when not sole dev) -->
+    <div v-if="roleNote" class="px-4 pb-2">
+      <span class="text-[11px] text-slate-600 italic">{{ roleNote }}</span>
+    </div>
+
     <!-- Tags -->
     <div v-if="project.tags.length" class="px-4 pb-3 flex flex-wrap gap-1.5">
       <span
@@ -84,5 +89,13 @@ const statusClasses = computed(() => {
     'coming-soon': 'text-amber-400',
   };
   return map[props.project.status] ?? '';
+});
+
+const roleNote = computed(() => {
+  const map: Record<string, string> = {
+    lead: 'lead developer',
+    contributor: 'contributing developer',
+  };
+  return props.project.role ? (map[props.project.role] ?? null) : null;
 });
 </script>

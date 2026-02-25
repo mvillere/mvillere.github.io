@@ -7,6 +7,8 @@ export interface ProjectLink {
 
 export type ProjectStatus = 'live' | 'archived' | 'coming-soon' | 'placeholder';
 
+export type ProjectRole = 'sole' | 'lead' | 'contributor';
+
 export interface Project {
   id: string;
   title: string;
@@ -16,6 +18,8 @@ export interface Project {
   status: ProjectStatus;
   year: string;
   featured?: boolean;
+  order?: number;
+  role?: ProjectRole;
   org?: string;
   chain?: string;
 }
@@ -96,6 +100,7 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Dec 2022',
     chain: 'Ethereum',
+    order: 1,
   },
   {
     id: 'moonray-presale',
@@ -107,6 +112,33 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Oct 2021',
     chain: 'Ethereum',
+    order: 2,
+  },
+  {
+    id: 'pizza-pets',
+    title: 'Pizza Pets',
+    description:
+      'The first fully on-chain Tamagotchi-style game on Bitcoin, built with recursion and no custom indexer or manual intervention. This immortal game lives on Bitcoin forever — playable only once, its outcome eternally recorded.',
+    tags: ['Bitcoin', 'Ordinals', 'Recursion', 'On-Chain Game'],
+    links: [
+      {
+        label: 'Root Inscription',
+        url: 'https://ordinals.com/inscription/79b19216adc1082eade26a059ef77676c0ea99d421fdfa8bc603eb30e099ccd4i0',
+      },
+      {
+        label: 'Manifesto',
+        url: 'https://ordinals.com/inscription/0a5263554c5734223af45f121a036e837aebb54e06c779517845423812d90506i0',
+      },
+      {
+        label: 'Code Root',
+        url: 'https://ordinals.com/children/b581be7e2ec3844972f25749d56fa245de838abf94b20063d5d45158f19b04efi1',
+      },
+    ],
+    status: 'live',
+    year: 'Dec 2024',
+    chain: 'Bitcoin (Ordinals)',
+    role: 'contributor',
+    order: 3,
   },
   {
     id: 'ordinals-placeholder-1',
@@ -117,6 +149,7 @@ export const nftContracts: Project[] = [
     status: 'placeholder',
     year: '20XX',
     chain: 'Bitcoin (Ordinals)',
+    order: 99,
   },
 ];
 
