@@ -6,16 +6,16 @@
     <div class="px-2 sm:px-4 py-4 border-b border-shell-border shrink-0">
       <div class="flex items-center justify-center sm:justify-start gap-2">
         <span class="text-cyan-400 text-base leading-none">◈</span>
-        <span class="hidden sm:inline text-sm font-semibold text-slate-200 tracking-tight">NiftyMike</span>
+        <span class="hidden sm:inline text-sm font-semibold text-slate-200 tracking-tight">mvillere</span>
       </div>
       <p class="hidden sm:block text-[11px] text-slate-600 mt-0.5 ml-[22px]">~/portfolio</p>
     </div>
 
     <!-- Navigation -->
     <nav class="flex-1 py-3 px-2 space-y-0.5">
-      <!-- About -->
+      <!-- Ungrouped: About, Skills, Projects -->
       <button
-        v-for="tab in aboutGroup"
+        v-for="tab in ungrouped"
         :key="tab.id"
         :title="tab.label"
         class="nav-item"
@@ -31,12 +31,10 @@
         <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- WEB3 divider — mobile: plain rule, desktop: labeled -->
+      <!-- Open Source (web3 group — label dropped per user request) -->
       <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
-      <div class="hidden sm:flex items-center gap-2 px-1 pt-3 pb-1">
-        <div class="h-px bg-shell-border flex-1" />
-        <span class="text-[10px] font-medium text-slate-600 tracking-widest uppercase">web3</span>
-        <div class="h-px bg-shell-border flex-1" />
+      <div class="hidden sm:block px-1 pt-3 pb-1">
+        <div class="h-px bg-shell-border" />
       </div>
 
       <button
@@ -56,33 +54,9 @@
         <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
-      <!-- WEB2 divider — mobile: plain rule, desktop: labeled -->
+      <!-- Content + Personal (other group) -->
       <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
-      <div class="hidden sm:flex items-center gap-2 px-1 pt-3 pb-1">
-        <div class="h-px bg-shell-border flex-1" />
-        <span class="text-[10px] font-medium text-slate-600 tracking-widest uppercase">web2</span>
-        <div class="h-px bg-shell-border flex-1" />
-      </div>
-
-      <button
-        v-for="tab in web2Group"
-        :key="tab.id"
-        :title="tab.label"
-        class="nav-item"
-        :class="{ 'nav-item--active': activeTab === tab.id }"
-        @click="$emit('select', tab.id)"
-      >
-        <component
-          :is="tab.icon"
-          :size="13"
-          :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
-          class="shrink-0 transition-colors"
-        />
-        <span class="hidden sm:inline">{{ tab.label }}</span>
-      </button>
-
-      <!-- Content (rule only) -->
-      <div class="px-1 pt-3 pb-1">
+      <div class="hidden sm:block px-1 pt-3 pb-1">
         <div class="h-px bg-shell-border" />
       </div>
 
@@ -119,7 +93,7 @@ export interface TabConfig {
   label: string;
   icon: Component;
   path: string;
-  group: 'web3' | 'web2' | 'other' | null;
+  group: 'web3' | 'other' | null;
 }
 
 const props = defineProps<{
@@ -129,9 +103,8 @@ const props = defineProps<{
 
 defineEmits<{ select: [id: string] }>();
 
-const aboutGroup = props.tabs.filter((t) => t.group === null);
+const ungrouped = props.tabs.filter((t) => t.group === null);
 const web3Group = props.tabs.filter((t) => t.group === 'web3');
-const web2Group = props.tabs.filter((t) => t.group === 'web2');
 const otherGroup = props.tabs.filter((t) => t.group === 'other');
 </script>
 

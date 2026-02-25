@@ -6,7 +6,7 @@
     >
       <span class="text-cyan-500 shrink-0 mt-px">◈</span>
       <span>
-        Authorship of EVM contracts can be verified on-chain - the implementation contract for each
+        Authorship of EVM contracts can be verified on-chain — the implementation contract for each
         project carries the comment
         <code class="text-cyan-300 bg-shell-card px-1 rounded text-[11px]"
           >@author @NiftyMike | @NFTCulture</code

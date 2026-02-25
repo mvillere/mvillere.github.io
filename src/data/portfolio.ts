@@ -153,11 +153,10 @@ export const nftContracts: Project[] = [
   },
 ];
 
-// ─── Crypto Infra ─────────────────────────────────────────────────────────────
-// Infrastructure and tooling - on-chain utility contracts, off-chain
-// tooling, and anything crypto-adjacent that isn't directly NFT creation.
+// ─── Open Source — Tools ──────────────────────────────────────────────────────
+// One-off contracts and tools (below repos in Open Source tab).
 
-export const infraContracts: Project[] = [
+export const openSourceTools: Project[] = [
   {
     id: 'gas-refunder',
     title: 'Gas Refunder',
@@ -191,10 +190,10 @@ export const infraContracts: Project[] = [
   },
 ];
 
-// ─── Open Source ──────────────────────────────────────────────────────────────
-// Publicly released libraries and frameworks.
+// ─── Open Source — Repos ──────────────────────────────────────────────────────
+// Publicly released libraries and frameworks (top of Open Source tab).
 
-export const openSource: Project[] = [
+export const openSourceRepos: Project[] = [
   {
     id: 'nftc-contracts',
     title: 'nftc-contracts',

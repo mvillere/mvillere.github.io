@@ -28,20 +28,19 @@
 
 <script setup lang="ts">
 import { ref, computed, type Component } from 'vue';
-import { Terminal, Diamond, Cpu, GitBranch, Monitor, Server, FileText } from 'lucide-vue-next';
+import { Terminal, BrainCircuit, FolderOpen, GitBranch, FileText, Home } from 'lucide-vue-next';
 
 import Sidebar from './components/Sidebar.vue';
 import type { TabConfig } from './components/Sidebar.vue';
 
 import AboutTab from './components/tabs/AboutTab.vue';
-import NftContractsTab from './components/tabs/NftContractsTab.vue';
-import InfraContractsTab from './components/tabs/InfraContractsTab.vue';
+import SkillsTab from './components/tabs/SkillsTab.vue';
+import ProjectsTab from './components/tabs/ProjectsTab.vue';
 import OpenSourceTab from './components/tabs/OpenSourceTab.vue';
-import FrontEndsTab from './components/tabs/FrontEndsTab.vue';
-import BackEndsTab from './components/tabs/BackEndsTab.vue';
 import ContentTab from './components/tabs/ContentTab.vue';
+import PersonalTab from './components/tabs/PersonalTab.vue';
 
-import { nftContracts, infraContracts, openSource, frontEnds, backEnds, articles } from './data/portfolio';
+import { nftContracts, openSourceRepos, openSourceTools, articles } from './data/portfolio';
 
 interface TabDef extends TabConfig {
   component: Component;
@@ -58,49 +57,30 @@ const tabs: TabDef[] = [
     component: AboutTab,
   },
   {
-    id: 'nft-contracts',
-    label: 'NFTs',
-    icon: Diamond,
-    path: 'web3/nfts',
-    group: 'web3',
-    component: NftContractsTab,
-    count: nftContracts.length,
+    id: 'skills',
+    label: 'Skills',
+    icon: BrainCircuit,
+    path: 'skills',
+    group: null,
+    component: SkillsTab,
   },
   {
-    id: 'infra-contracts',
-    label: 'Crypto Infra',
-    icon: Cpu,
-    path: 'web3/crypto-infra',
-    group: 'web3',
-    component: InfraContractsTab,
-    count: infraContracts.length,
+    id: 'projects',
+    label: 'Projects',
+    icon: FolderOpen,
+    path: 'projects',
+    group: null,
+    component: ProjectsTab,
+    count: nftContracts.filter((p) => p.status !== 'placeholder').length,
   },
   {
     id: 'open-source',
     label: 'Open Source',
     icon: GitBranch,
-    path: 'web3/open-source',
+    path: 'open-source',
     group: 'web3',
     component: OpenSourceTab,
-    count: openSource.length,
-  },
-  {
-    id: 'front-ends',
-    label: 'Front Ends',
-    icon: Monitor,
-    path: 'web2/front-ends',
-    group: 'web2',
-    component: FrontEndsTab,
-    count: frontEnds.length,
-  },
-  {
-    id: 'back-ends',
-    label: 'Back Ends',
-    icon: Server,
-    path: 'web2/back-ends',
-    group: 'web2',
-    component: BackEndsTab,
-    count: backEnds.length,
+    count: openSourceRepos.length + openSourceTools.filter((p) => p.status !== 'placeholder').length,
   },
   {
     id: 'content',
@@ -109,7 +89,15 @@ const tabs: TabDef[] = [
     path: 'content',
     group: 'other',
     component: ContentTab,
-    count: articles.length,
+    count: articles.filter((a) => a.url !== null).length || undefined,
+  },
+  {
+    id: 'personal',
+    label: 'Personal',
+    icon: Home,
+    path: 'personal',
+    group: 'other',
+    component: PersonalTab,
   },
 ];
 
