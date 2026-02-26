@@ -7,7 +7,7 @@ export interface ProjectLink {
 
 export type ProjectStatus = 'live' | 'archived' | 'coming-soon' | 'placeholder';
 
-export type ProjectRole = 'sole' | 'lead' | 'contributor';
+export type ProjectRole = 'sole' | 'lead' | 'contributor' | 'owner';
 
 export interface Project {
   id: string;
@@ -88,6 +88,21 @@ export const nftContracts: Project[] = [
     featured: true,
   },
   {
+    id: 'cosmic-bloom',
+    title: 'Cosmic Bloom by Leo Villareal',
+    description:
+      "The second part of Leo Villareal's Cosmologies series — the first of which was an Art Blocks Curated project. Cosmic Bloom uses the Dr3am Labs cloud backend as an instant reveal service. Using Dr3am Labs instead of Art Blocks Engine enabled Leo to implement significantly more complex live rendering code and a curation function for the artist, while still maintaining the archival benefits of IPFS. Each work features intricate generative geometric forms in perpetual non-repeating motion.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'Dr3am Labs'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x667D28Ca8a8F4391Fe13c92d36e60c7615D2f8db' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/cosmic-bloom-by-leo-villareal' },
+    ],
+    status: 'live',
+    year: 'Dec 2022',
+    chain: 'Ethereum',
+    featured: true,
+  },
+  {
     id: 'keith-haring-pixel-pioneer',
     title: 'Keith Haring: Pixel Pioneer',
     description:
@@ -120,21 +135,6 @@ export const nftContracts: Project[] = [
 
   // ── Additional Work ────────────────────────────────────────────────────────
   {
-    id: 'cosmic-bloom',
-    title: 'Cosmic Bloom by Leo Villareal',
-    description:
-      "The second part of Leo Villareal's Cosmologies series — the first of which was an Art Blocks Curated project. Cosmic Bloom uses the Dr3am Labs cloud backend as an instant reveal service. Using Dr3am Labs instead of Art Blocks Engine enabled Leo to implement significantly more complex live rendering code and a curation function for the artist, while still maintaining the archival benefits of IPFS. Each work features intricate generative geometric forms in perpetual non-repeating motion.",
-    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'Dr3am Labs'],
-    links: [
-      { label: 'Contract', url: 'https://etherscan.io/address/0x667D28Ca8a8F4391Fe13c92d36e60c7615D2f8db' },
-      { label: 'OpenSea', url: 'https://opensea.io/collection/cosmic-bloom-by-leo-villareal' },
-    ],
-    status: 'live',
-    year: 'Dec 2022',
-    chain: 'Ethereum',
-    order: 1,
-  },
-  {
     id: 'moonray-presale',
     title: 'Moonray Presale Pass',
     description:
@@ -144,7 +144,52 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Oct 2021',
     chain: 'Ethereum',
+    order: 1,
+  },
+  {
+    id: 'monster-champions',
+    title: 'Monster Champions',
+    description:
+      'Genesis character drop for Monster Champions, an upcoming GameFi game. Michael handled both art generation and smart contract development. The contract is a custom gas-efficient extension of ERC721a.',
+    tags: ['Solidity', 'ERC721a', 'Ethereum', 'GameFi', 'Generative Art'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x0151f9726d0c056b8c29311029cc43bec291820c#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/monsterchampions' },
+    ],
+    status: 'live',
+    year: 'Apr 2022',
+    chain: 'Ethereum',
     order: 2,
+  },
+  {
+    id: 'monster-champions-menagerie',
+    title: 'Monster Champions Menagerie',
+    description:
+      'NFT project on Polygon serving two roles: an airdrop for early Monster Champions supporters, and a live character inventory contract for the Monster Champions GameFi game. Monster Egg tokens function as rewards that later hatch into Monsters playable in the game.',
+    tags: ['Solidity', 'ERC-721', 'Polygon', 'GameFi', 'Airdrop'],
+    links: [
+      { label: 'Contract', url: 'https://polygonscan.com/address/0x0151f9726d0c056b8c29311029cc43bec291820c#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/monsterchampionsmenagerie' },
+    ],
+    status: 'live',
+    year: 'Apr 2022',
+    chain: 'Polygon',
+    order: 3,
+  },
+  {
+    id: 'moonray-foundation',
+    title: 'Moonray: The Foundation Collection',
+    description:
+      'Genesis playable avatar drop for Moonray, a AAA action RPG with a blockchain-based economy. The contract is a custom gas-efficient extension of ERC721a, with multiple presale phases accommodating different gamer communities and discount tiers.',
+    tags: ['Solidity', 'ERC721a', 'Ethereum', 'GameFi', 'Gaming'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0xa178a73f6e215531047d3486f8edc68d14548f6b#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/moonray-foundation' },
+    ],
+    status: 'live',
+    year: 'May 2022',
+    chain: 'Ethereum',
+    order: 4,
   },
   {
     id: 'source-on-nfts',
@@ -161,7 +206,7 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Mar 2024',
     chain: 'Ethereum',
-    order: 4,
+    order: 5,
   },
   {
     id: 'pizza-pets',
@@ -187,7 +232,7 @@ export const nftContracts: Project[] = [
     year: 'Dec 2024',
     chain: 'Bitcoin (Ordinals)',
     role: 'contributor',
-    order: 3,
+    featured: true,
   },
 ];
 
@@ -205,6 +250,7 @@ export const openSourceTools: Project[] = [
     status: 'live',
     year: 'Sep 2021',
     chain: 'Ethereum',
+    role: 'owner',
   },
   {
     id: 'ordinals-minting-tool',
@@ -216,15 +262,7 @@ export const openSourceTools: Project[] = [
     status: 'coming-soon',
     year: '2023',
     chain: 'Bitcoin (Ordinals)',
-  },
-  {
-    id: 'infra-placeholder-1',
-    title: '[PLACEHOLDER] Contract / Tool',
-    description: '[PLACEHOLDER] Description of what this crypto infrastructure item does and the problem it solves.',
-    tags: ['Solidity', 'Ethereum'],
-    links: [],
-    status: 'placeholder',
-    year: '20XX',
+    role: 'contributor',
   },
 ];
 
@@ -232,6 +270,18 @@ export const openSourceTools: Project[] = [
 // Publicly released libraries and tools (top of Open Source tab).
 
 export const openSourceRepos: Project[] = [
+  {
+    id: 'nftc-contract-audit',
+    title: 'nftc-contract-audit',
+    description:
+      'Shared resources, checklists, and documentation for auditing EVM smart contracts. Provides the community with practical frameworks for reviewing smart contract code — covering access control, fund management, minting logic, and common vulnerability patterns.',
+    tags: ['Solidity', 'Security', 'Auditing', 'EVM', 'Documentation'],
+    links: [{ label: 'GitHub', url: 'https://github.com/NFTCulture/nftc-contract-audit' }],
+    status: 'live',
+    year: '2022–2026',
+    org: 'NFT Culture',
+    role: 'owner',
+  },
   {
     id: 'nftc-contracts',
     title: 'nftc-contracts',
@@ -242,6 +292,19 @@ export const openSourceRepos: Project[] = [
     status: 'live',
     year: '2021–2023',
     org: 'NFT Culture',
+    role: 'owner',
+  },
+  {
+    id: 'pizza-pets-docs',
+    title: 'pizza-pets-docs',
+    description:
+      'API reference and documentation for the Pizza Pets and Color-Test collections, demonstrating dynamic Ordinals collections driven by Bitcoin block events. Provides a baseline implementation for evaluating Pizza Pet states without relying on hosted backend services — useful for marketplace integrations and tooling.',
+    tags: ['TypeScript', 'Bitcoin', 'Ordinals', 'API', 'Documentation'],
+    links: [{ label: 'GitHub', url: 'https://github.com/RocketshipApp/pizza-pets-docs' }],
+    status: 'live',
+    year: '2025',
+    org: 'Rocketship',
+    role: 'contributor',
   },
 ];
 
@@ -257,7 +320,7 @@ export const techPlatforms: Project[] = [
       'A templating framework for building smart contracts and mint microsites. Enables rapid, standardized deployment of NFT project infrastructure with consistent, auditable patterns across projects.',
     tags: ['Framework', 'Solidity', 'JavaScript', 'Templating'],
     links: [],
-    status: 'coming-soon',
+    status: 'live',
     year: '2022–2023',
     org: 'NFT Culture',
   },
@@ -268,7 +331,7 @@ export const techPlatforms: Project[] = [
       'Python-based generative art construction library for building layered NFT artwork. Handles trait systems, rarity weights, and large-scale image composition pipelines.',
     tags: ['Python', 'Generative Art', 'NFT'],
     links: [],
-    status: 'coming-soon',
+    status: 'live',
     year: '2021–2022',
     org: 'NFT Culture',
   },
