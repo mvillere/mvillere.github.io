@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { ref, computed, type Component } from 'vue';
-import { Terminal, BrainCircuit, FolderOpen, GitBranch, FileText, Home } from 'lucide-vue-next';
+import { Terminal, BrainCircuit, FolderOpen, GitBranch, Layers, FileText, Home } from 'lucide-vue-next';
 
 import Sidebar from './components/Sidebar.vue';
 import type { TabConfig } from './components/Sidebar.vue';
@@ -37,10 +37,11 @@ import AboutTab from './components/tabs/AboutTab.vue';
 import SkillsTab from './components/tabs/SkillsTab.vue';
 import ProjectsTab from './components/tabs/ProjectsTab.vue';
 import OpenSourceTab from './components/tabs/OpenSourceTab.vue';
+import TechnologyTab from './components/tabs/TechnologyTab.vue';
 import ContentTab from './components/tabs/ContentTab.vue';
 import PersonalTab from './components/tabs/PersonalTab.vue';
 
-import { nftContracts, openSourceRepos, openSourceTools, articles } from './data/portfolio';
+import { nftContracts, openSourceRepos, openSourceTools, techPlatforms, articles } from './data/portfolio';
 
 interface TabDef extends TabConfig {
   component: Component;
@@ -81,6 +82,15 @@ const tabs: TabDef[] = [
     group: 'work',
     component: OpenSourceTab,
     count: openSourceRepos.length + openSourceTools.filter((p) => p.status !== 'placeholder').length,
+  },
+  {
+    id: 'technology',
+    label: 'Technology',
+    icon: Layers,
+    path: 'technology',
+    group: 'work',
+    component: TechnologyTab,
+    count: techPlatforms.filter((p) => p.status !== 'placeholder').length,
   },
   {
     id: 'content',

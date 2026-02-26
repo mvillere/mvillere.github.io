@@ -28,7 +28,7 @@
 
     <!-- Description -->
     <div class="px-4 pb-3 flex-1">
-      <p class="text-xs text-slate-400 leading-relaxed" :class="{ 'line-clamp-2': !isExpanded }">
+      <p class="text-xs text-slate-400 leading-relaxed" :class="{ 'line-clamp-2': !isExpanded, 'whitespace-pre-line': isExpanded }">
         {{ project.description }}
       </p>
     </div>

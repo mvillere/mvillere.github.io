@@ -45,11 +45,29 @@ export const nftContracts: Project[] = [
     id: 'nft-cult',
     title: 'The NFT Cult',
     description:
-      "NFT Culture's in-house supporter token - one of the earliest projects under the NFT Culture banner and a hands-on proof-of-concept for the ETH/NFT ecosystem. Built to demonstrate technical command of on-chain NFT mechanics from day one.",
-    tags: ['Solidity', 'ERC-721', 'Ethereum', 'NFT Culture'],
-    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x5d75c1b764afd64fe02a28b5eff79e2f81db5bad' }],
+      "NFT Culture's in-house supporter token — one of the earliest projects under the banner and a hands-on proof-of-concept for production-quality EVM mechanics.\n\nThe contract featured three bespoke on-chain capabilities: Forging let holders combine owned tokens via a mathematical formula embedded in the contract — converting two silvers into a gold, merging cross-tier tokens into hybrids, or unlocking pieces that were never directly mintable. Burn Minting gifted holders of 32+ tokens a special multicolored piece created by the artist. Extensible Artwork allowed new token types to be added post-launch without a contract upgrade; when forging was activated roughly one month after mint, the Justice character became unlockable by combining three unrelated silvers.\n\nTwo companion interfaces shipped alongside the contract: a mint app (Angular + ethers v5 + Alchemy, embedded in a WordPress site) and a forge app that let holders browse their wallet contents and select tokens for combining. No backend.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Angular', 'Ethers.js', 'NFT Culture'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x5d75c1b764afd64fe02a28b5eff79e2f81db5bad' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/nftcult' },
+    ],
     status: 'live',
     year: 'Sep 2021',
+    chain: 'Ethereum',
+    featured: true,
+  },
+  {
+    id: 'jr-can-art-change-the-war',
+    title: 'JR — Can Art Change the War?',
+    description:
+      "Charitable NFT project in collaboration with JR, a celebrated French photographic artist, timed to coincide with his work appearing on the cover of Time Magazine in April 2022. All proceeds were donated to Ukraine, raising over $300k USD.\n\nThe collection accepted both ETH and fiat payment — fiat purchasers received an airdropped NFT. Complete end-to-end solution (smart contract + front-end mint interface) built pro-bono in 7 days. The contract is a custom extension of ERC721a, chosen for its gas efficiency.",
+    tags: ['Solidity', 'ERC721a', 'Ethereum', 'Angular', 'Ethers.js', 'Charitable'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x53142464f2faece413aaf1886e9f21d6113d1257#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/can-art-change-the-war' },
+    ],
+    status: 'live',
+    year: 'Mar 2022',
     chain: 'Ethereum',
     featured: true,
   },
@@ -57,11 +75,12 @@ export const nftContracts: Project[] = [
     id: '3face-ian-cheng',
     title: '3FACE by Ian Cheng',
     description:
-      "Generative portrait NFT by artist Ian Cheng, held in the permanent collection of the MoMA. Each work reads its owner's on-chain wallet history through a personality model developed by Cheng, producing a continuously evolving visual portrait of the collector's digital identity. Collectors can refresh their 3FACE as their wallet evolves.",
+      "Adaptive generative portrait NFT by artist Ian Cheng, held in the permanent collection of the MoMA. 3FACE uses big data analytics of wallet behavior to build a proprietary personality model for each collector's address, which is then fed into a live art rendering engine to produce a portrait uniquely tuned to that wallet's on-chain history. Collectors can refresh their 3FACE as their wallet evolves.\n\nThe project features a live rendering backend, user-updatable artwork, big data analytics, and dynamic story-driven metadata. Michael was responsible for the overall architecture, cloud infrastructure, and component integration — and wrote the majority of the implementation outside of the art rendering engine itself.",
     tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'MoMA'],
     links: [
       { label: 'Contract', url: 'https://etherscan.io/address/0xd20969460645Add745f3F490d0f7AeE1Be60b741' },
       { label: 'MoMA Collection', url: 'https://www.moma.org/collection/works/442076' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/3face-by-ian-cheng' },
     ],
     status: 'live',
     year: 'Aug 2022',
@@ -72,17 +91,26 @@ export const nftContracts: Project[] = [
     id: 'keith-haring-pixel-pioneer',
     title: 'Keith Haring: Pixel Pioneer',
     description:
-      "Five unique digital drawings created by Keith Haring on an Amiga computer in the mid-1980s, minted on Ethereum by the Keith Haring Foundation. Previously accessible only via floppy disk - the collection sold at Christie's for $1.5M. Multi-contract stack; primary implementation shown, additional contracts to be linked.",
-    tags: ['Solidity', 'ERC-721', 'Ethereum', "Christie's", 'Keith Haring Foundation'],
+      "A collection of 5 works created in 1987 by Keith Haring on an Amiga computer — rediscovered by the New York Public Library in the 2010s. For this project the artwork was recovered and digitally preserved, with both modernized and source versions archived fully on-chain across a three-contract stack (NFT, metadata, and artwork). The collection was auctioned by Christie's and displayed at Christie's galleries around the globe.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', "Christie's", 'Keith Haring Foundation', 'On-Chain Artwork'],
     links: [
       {
-        label: 'Contract (primary)',
-        url: 'https://etherscan.io/address/0x8CD834258d000166769733Dfb5fB6fD6E43dB4e7',
+        label: 'NFT Contract',
+        url: 'https://etherscan.io/address/0x8CD834258d000166769733Dfb5fB6fD6E43dB4e7#code',
+      },
+      {
+        label: 'Metadata Contract',
+        url: 'https://etherscan.io/address/0x7ff5225c530a57dB690Ba56eaCD7979bb136298b#code',
+      },
+      {
+        label: 'Artwork Contract',
+        url: 'https://etherscan.io/address/0x8abC21a84992b8C50c086D5133D6B428b8FC7439#code',
       },
       {
         label: "Christie's Auction",
         url: 'https://onlineonly.christies.com/s/keith-haring-pixel-pioneer/overview/3479',
       },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/keith-haring-pixel-pioneer' },
     ],
     status: 'live',
     year: 'Sep 2023',
@@ -95,9 +123,12 @@ export const nftContracts: Project[] = [
     id: 'cosmic-bloom',
     title: 'Cosmic Bloom by Leo Villareal',
     description:
-      "Generative NFT collection by light artist Leo Villareal - the second in his Cosmologies series. Produced with custom live code, each work features intricate geometric forms in perpetual non-repeating motion, extending Villareal's large-scale light sculpture practice into purely digital works.",
-    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art'],
-    links: [{ label: 'Contract', url: 'https://etherscan.io/address/0x667D28Ca8a8F4391Fe13c92d36e60c7615D2f8db' }],
+      "The second part of Leo Villareal's Cosmologies series — the first of which was an Art Blocks Curated project. Cosmic Bloom uses the Dr3am Labs cloud backend as an instant reveal service. Using Dr3am Labs instead of Art Blocks Engine enabled Leo to implement significantly more complex live rendering code and a curation function for the artist, while still maintaining the archival benefits of IPFS. Each work features intricate generative geometric forms in perpetual non-repeating motion.",
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'Dr3am Labs'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x667D28Ca8a8F4391Fe13c92d36e60c7615D2f8db' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/cosmic-bloom-by-leo-villareal' },
+    ],
     status: 'live',
     year: 'Dec 2022',
     chain: 'Ethereum',
@@ -114,6 +145,23 @@ export const nftContracts: Project[] = [
     year: 'Oct 2021',
     chain: 'Ethereum',
     order: 2,
+  },
+  {
+    id: 'source-on-nfts',
+    title: 'SOURCE [On NFTs] by Robert Alice',
+    description:
+      'Fully on-chain generative art NFT developed as a companion project to the Taschen book OnNFTs. The first generative art collection launched on the Christie\'s 3.0 NFT platform, and one of the first projects to leverage a fully on-chain instance of p5.js via the Scripty.sol encoding system. Three-contract architecture (NFT, metadata, and artwork).',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'p5.js', 'Scripty.sol', 'On-Chain', "Christie's"],
+    links: [
+      { label: 'NFT Contract', url: 'https://etherscan.io/address/0x5e5551fF74c8F5Bd3AAAE8801aEd0d579DdB470C#code' },
+      { label: 'Metadata Contract', url: 'https://etherscan.io/address/0x65419C1eeC692E3D30FcB9E99889C6B8C723226A#code' },
+      { label: 'Artwork Contract', url: 'https://etherscan.io/address/0xe3b57ed893E8FA03DD63A441372735bD7C07BCf5#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/source-on-nfts-by-robert-alice' },
+    ],
+    status: 'live',
+    year: 'Mar 2024',
+    chain: 'Ethereum',
+    order: 4,
   },
   {
     id: 'pizza-pets',
@@ -140,17 +188,6 @@ export const nftContracts: Project[] = [
     chain: 'Bitcoin (Ordinals)',
     role: 'contributor',
     order: 3,
-  },
-  {
-    id: 'ordinals-placeholder-1',
-    title: '[PLACEHOLDER] Ordinals Project',
-    description: '[PLACEHOLDER] Description of this Bitcoin Ordinals inscription project.',
-    tags: ['Bitcoin', 'Ordinals'],
-    links: [],
-    status: 'placeholder',
-    year: '20XX',
-    chain: 'Bitcoin (Ordinals)',
-    order: 99,
   },
 ];
 
@@ -192,7 +229,7 @@ export const openSourceTools: Project[] = [
 ];
 
 // ─── Open Source — Repos ──────────────────────────────────────────────────────
-// Publicly released libraries and frameworks (top of Open Source tab).
+// Publicly released libraries and tools (top of Open Source tab).
 
 export const openSourceRepos: Project[] = [
   {
@@ -206,6 +243,13 @@ export const openSourceRepos: Project[] = [
     year: '2021–2023',
     org: 'NFT Culture',
   },
+];
+
+// ─── Technology — Platforms & Frameworks ──────────────────────────────────────
+// Internal platforms, frameworks, and services that power multiple projects.
+// Distinct from open source libs: these are proprietary or not-yet-released.
+
+export const techPlatforms: Project[] = [
   {
     id: 'testarossa',
     title: 'Testarossa',
@@ -226,6 +270,17 @@ export const openSourceRepos: Project[] = [
     links: [],
     status: 'coming-soon',
     year: '2021–2022',
+    org: 'NFT Culture',
+  },
+  {
+    id: 'dr3am-labs-cloud',
+    title: 'Dr3am Labs Cloud',
+    description:
+      'Internal backend platform for NFT minting microsites and generative art projects. Provides instant reveal, metadata APIs, and asset delivery as a managed service — enabling more complex live rendering and artist curation workflows while preserving IPFS archival guarantees. Dual App Engine architecture (static + API services) on GCP, backed by Firestore and Cloud Storage.',
+    tags: ['Node.js', 'TypeScript', 'Fastify', 'GCP', 'App Engine', 'Firestore'],
+    links: [],
+    status: 'live',
+    year: '2022–present',
     org: 'NFT Culture',
   },
 ];
