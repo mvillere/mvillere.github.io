@@ -9,7 +9,7 @@
         <div class="flex items-center gap-1.5 text-xs text-slate-600">
           <span>~/portfolio</span>
           <span>/</span>
-          <span class="text-slate-400">{{ currentTab.path }}</span>
+          <span class="text-slate-400">{{ breadcrumbPath }}</span>
           <span class="cursor-blink" />
         </div>
         <div class="flex items-center justify-between mt-1.5">
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, type Component } from 'vue';
+import { ref, computed, provide, watch, type Component } from 'vue';
 import { Terminal, BrainCircuit, FolderOpen, GitBranch, Layers, FileText, Home } from 'lucide-vue-next';
 
 import Sidebar from './components/Sidebar.vue';
@@ -112,8 +112,19 @@ const tabs: TabDef[] = [
 ];
 
 const activeTabId = ref('about');
+const subPath = ref<string | null>(null);
+provide('subPath', subPath);
+
+watch(activeTabId, () => {
+  subPath.value = null;
+});
 
 const currentTab = computed(() => tabs.find((t) => t.id === activeTabId.value) ?? tabs[0]);
+
+const breadcrumbPath = computed(() => {
+  if (subPath.value) return `${currentTab.value.path}/${subPath.value}`;
+  return currentTab.value.path;
+});
 
 const itemCount = computed(() => {
   const count = currentTab.value.count;

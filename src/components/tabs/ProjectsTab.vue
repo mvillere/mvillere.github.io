@@ -43,6 +43,6 @@ import ProjectCard from '../ProjectCard.vue';
 
 const featured = computed(() => nftContracts.filter((p) => p.featured));
 const rest = computed(() =>
-  nftContracts.filter((p) => !p.featured).sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity)),
+  nftContracts.filter((p) => !p.featured).sort((a, b) => (b.order ?? -Infinity) - (a.order ?? -Infinity)),
 );
 </script>

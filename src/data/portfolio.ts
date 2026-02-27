@@ -9,6 +9,11 @@ export type ProjectStatus = 'live' | 'archived' | 'coming-soon' | 'placeholder';
 
 export type ProjectRole = 'sole' | 'lead' | 'contributor' | 'owner';
 
+export interface ProjectDetailSection {
+  heading: string;
+  body: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -22,6 +27,7 @@ export interface Project {
   role?: ProjectRole;
   org?: string;
   chain?: string;
+  detail?: ProjectDetailSection[];
 }
 
 export interface Article {
@@ -147,6 +153,51 @@ export const nftContracts: Project[] = [
     order: 1,
   },
   {
+    id: 'the-gallery-nft-culture',
+    title: 'The Gallery By NFT Culture',
+    description:
+      'Art gallery with custom art creations for NFT Culture token supporters. ERC1155 with significant gas optimizations for the pre-ERC721a era. Complete end-to-end technology solution built by NFT Culture.',
+    tags: ['Solidity', 'ERC-1155', 'Ethereum', 'NFT Culture'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0xcdf177e68104e64d306e829a5a5b277e58ee3fdb#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/the-gallery-by-nft-culture' },
+    ],
+    status: 'live',
+    year: 'Nov 2021',
+    chain: 'Ethereum',
+    order: 2,
+  },
+  {
+    id: 'noob-punks',
+    title: 'Noob Punks',
+    description:
+      '10,000 generative Punks in the style of NOOBS — a collaborative project with Mad Pups group and the NOOBS project. Art generation and smart contract by NFT Culture.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0xa5a1e6972ace6f4ae388fbafcb7ec12013b64f53#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/noobpunks-nft' },
+    ],
+    status: 'live',
+    year: 'Feb 2022',
+    chain: 'Ethereum',
+    order: 3,
+  },
+  {
+    id: 'justice-for-ukraine',
+    title: 'Justice (For Ukraine)',
+    description:
+      "Charitable NFT project with 100% of revenue donated to Ukraine. Launched to harden NFT Culture Labs' v2 minting dApp ahead of the JR — Can Art Change the War? project, ensuring seamless bug-free minting at scale. Contract is ERC721a.",
+    tags: ['Solidity', 'ERC721a', 'Ethereum', 'Charitable'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x31a82b5b4abc844591016c38d36bbc2020a7aa3e#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/j4u' },
+    ],
+    status: 'live',
+    year: 'Mar 2022',
+    chain: 'Ethereum',
+    order: 4,
+  },
+  {
     id: 'monster-champions',
     title: 'Monster Champions',
     description:
@@ -159,7 +210,7 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Apr 2022',
     chain: 'Ethereum',
-    order: 2,
+    order: 5,
   },
   {
     id: 'monster-champions-menagerie',
@@ -174,7 +225,7 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Apr 2022',
     chain: 'Polygon',
-    order: 3,
+    order: 6,
   },
   {
     id: 'moonray-foundation',
@@ -189,13 +240,95 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'May 2022',
     chain: 'Ethereum',
-    order: 4,
+    order: 7,
+  },
+  {
+    id: 'moonray-comics',
+    title: 'Moonray Comics',
+    description:
+      'A series of comic book chapters released as mintable NFTs, based on Moonray in-game lore. The first time Michael hooked a minting interface up to multiple separate contracts concurrently — not commonplace at the time.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Gaming'],
+    links: [
+      { label: 'Contract (Ch. 1)', url: 'https://etherscan.io/address/0x70e3011712c2925ffEb9b4Fc8075e63848D34023#code' },
+      { label: 'Contract (Ch. 2)', url: 'https://etherscan.io/address/0xD7a3Bda3B7ae28e2e5fA7c60Da35341A1A444A32#code' },
+    ],
+    status: 'live',
+    year: 'Jul 2022',
+    chain: 'Ethereum',
+    order: 8,
+  },
+  {
+    id: 'moonray-token',
+    title: 'Moonray Token',
+    description:
+      'ERC20 utility token for the Moonray web3 ecosystem. Convertible from in-game Miium Dust, used to purchase skins, items, and digital assets in-game, and as currency for match wagers via the wager protocol.',
+    tags: ['Solidity', 'ERC-20', 'Ethereum', 'Gaming', 'Token'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x06904a21f2dB805487FcBDC3b3Fe9607dAaa5D54#code' },
+    ],
+    status: 'live',
+    year: 'Jul 2022',
+    chain: 'Ethereum',
+    order: 9,
+  },
+  {
+    id: 'moonray-genesis-skins',
+    title: 'Moonray Genesis Skins',
+    description:
+      'A series of 6 playable skins for Moonray, plus a bonus skin packaged with the Bored Box collection. The first implementation of the NFTC Expandable Contract system — dynamic creation of individual NFT types with a consistent minting API enforced across all contracts, enabling a single front-end interface to service all contracts concurrently. Predated the release of the OpenSea SeaDrop protocol by two months.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'GameFi', 'Expandable Contract'],
+    links: [
+      { label: 'OpenSea (Creator)', url: 'https://opensea.io/MoonrayGame/created' },
+      { label: 'Skin 1', url: 'https://etherscan.io/address/0x2B99aBd1E78FC4712CA9b335d248444A8b0b2217#code' },
+      { label: 'Skin 2', url: 'https://etherscan.io/address/0x36653274C741A89D4F6Ebf07B1a617231854a7a6#code' },
+      { label: 'Skin 3', url: 'https://etherscan.io/address/0xA943510c723333CD56D109805EA0bd955b2bcBB5#code' },
+      { label: 'Skin 4', url: 'https://etherscan.io/address/0x38F97d6139D67BD2ea5F502BEaE4a0a84545AA3D#code' },
+      { label: 'Skin 5', url: 'https://etherscan.io/address/0x0DDD3d6b8015C74922dF22e95E2C4bE4e1e1e0Bc#code' },
+      { label: 'Skin 6', url: 'https://etherscan.io/address/0x1b09d57b0c92c6cdec9237cac36f7e1713556e5b#code' },
+      { label: 'Bored Box Skin', url: 'https://etherscan.io/address/0x8f30c31f2800920d36cc23f19241781f9c360808#code' },
+    ],
+    status: 'live',
+    year: 'Sep 2022',
+    chain: 'Ethereum',
+    order: 10,
+  },
+  {
+    id: 'noob-zoo',
+    title: 'Noob Zoo',
+    description:
+      '5,000 companion animals in the style of NOOBS — a collaborative project with Mad Pups group and the NOOBS project. Art generation and smart contract by NFT Culture.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x0f2d97060776c8184aca969e9bd2d42b16e7c134#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/noobzoo' },
+    ],
+    status: 'live',
+    year: 'Dec 2022',
+    chain: 'Ethereum',
+    order: 11,
+  },
+  {
+    id: 'neon-istanbul',
+    title: 'Neon Istanbul by Devrim Erbil',
+    description:
+      'Paintings and prints of Istanbul by Devrim Erbil, a renowned Turkish artist. Bundled with physical works and sold by the London gallery Renko. Released as a standard edition and an open edition.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'Physical + Digital'],
+    links: [
+      { label: 'Contract', url: 'https://etherscan.io/address/0x1333d787Dca8bb5ACb88C2DBeb0670AC5163e1Af#code' },
+      { label: 'OE Contract', url: 'https://etherscan.io/address/0x336aD6F60d9224B759bE6416009D7B08ab73c6a0#code' },
+      { label: 'OpenSea', url: 'https://opensea.io/collection/neon-istanbul' },
+      { label: 'OpenSea (OE)', url: 'https://opensea.io/collection/neon-istanbul-open-edition' },
+    ],
+    status: 'live',
+    year: 'Jan 2023',
+    chain: 'Ethereum',
+    order: 12,
   },
   {
     id: 'source-on-nfts',
     title: 'SOURCE [On NFTs] by Robert Alice',
     description:
-      'Fully on-chain generative art NFT developed as a companion project to the Taschen book OnNFTs. The first generative art collection launched on the Christie\'s 3.0 NFT platform, and one of the first projects to leverage a fully on-chain instance of p5.js via the Scripty.sol encoding system. Three-contract architecture (NFT, metadata, and artwork).',
+      "Fully on-chain generative art NFT developed as a companion project to the Taschen book OnNFTs. The first generative art collection launched on the Christie's 3.0 NFT platform, and one of the first projects to leverage a fully on-chain instance of p5.js via the Scripty.sol encoding system. Three-contract architecture (NFT, metadata, and artwork).",
     tags: ['Solidity', 'ERC-721', 'Ethereum', 'Generative Art', 'p5.js', 'Scripty.sol', 'On-Chain', "Christie's"],
     links: [
       { label: 'NFT Contract', url: 'https://etherscan.io/address/0x5e5551fF74c8F5Bd3AAAE8801aEd0d579DdB470C#code' },
@@ -206,7 +339,26 @@ export const nftContracts: Project[] = [
     status: 'live',
     year: 'Mar 2024',
     chain: 'Ethereum',
-    order: 5,
+    order: 13,
+  },
+  {
+    id: 'onnfts-companion',
+    title: 'On NFTs Book Companion NFTs',
+    description:
+      '4 companion art NFTs for the On NFTs coffee table book by Taschen and Robert Alice, featuring work by Refik Anadol, Dmitri Cherniak, Sofia Crespo, and Osinachi. Built on the Chainnative multi-contract stack developed on Keith Haring: Pixel Pioneer. Special editions of the book contained redemption codes allowing NFTs to be minted via the interface — secured via a salted merkle tree, an early example of the approach predating later mainstream uses.',
+    tags: ['Solidity', 'ERC-721', 'Ethereum', 'On-Chain', 'Chainnative', 'Taschen'],
+    links: [
+      { label: 'Refik Anadol', url: 'https://etherscan.io/address/0xC5fE623cF7022C7f844Af7D6Ba96eEBa85e51AeD#code' },
+      { label: 'Dmitri Cherniak', url: 'https://etherscan.io/address/0x4EbabE5d942B0Dde9e2Ab17E7fF563CCEfA65d34#code' },
+      { label: 'Sofia Crespo', url: 'https://etherscan.io/address/0xC0756CDaB3D9C87F1Cd04468c9359c86A1FA13a1#code' },
+      { label: 'Osinachi', url: 'https://etherscan.io/address/0x2C10d625E5F7120177fcE2c9687bfBB90Fbbe27E#code' },
+      { label: 'Art Contract', url: 'https://etherscan.io/address/0xFad35BE3d5746919218F63aBc91FeACE0E2f3FF8#code' },
+      { label: 'Metadata Contract', url: 'https://etherscan.io/address/0xB5a9f4d240187a60A311a3fAd7cC72dEA59a06F8#code' },
+    ],
+    status: 'live',
+    year: 'May 2024',
+    chain: 'Ethereum',
+    order: 14,
   },
   {
     id: 'pizza-pets',
@@ -314,36 +466,69 @@ export const openSourceRepos: Project[] = [
 
 export const techPlatforms: Project[] = [
   {
+    id: 'chainnative',
+    title: 'Chainnative',
+    description:
+      'A multi-contract architecture for fully on-chain NFT artwork. Separates token, metadata, and artwork into independent verified on-chain contracts — enabling archival of generative and historical artwork with no off-chain dependencies. First developed on Keith Haring: Pixel Pioneer and extended for the On NFTs Book Companion NFTs.',
+    tags: ['Solidity', 'On-Chain', 'EVM', 'Multi-Contract', 'Scripty.sol', 'Artwork'],
+    links: [],
+    status: 'live',
+    year: '2023–2024',
+    org: 'NFT Culture',
+    detail: [
+      {
+        heading: 'Philosophy',
+        body: '"Chainnative" is not a feature — it is a constraint. Every component in the stack exists to fulfill one requirement: all NFT data must live on-chain and be constructible at read time from contract state alone.\n\nIn practice: tokenURI() returns a data:application/json;base64,... string — the complete JSON is built on-chain, not fetched from an API. Image data is either stored as base64-encoded bytes in contract storage or constructed at read time from on-chain JavaScript. Attribute and trait data is stored as compact packed integers, decoded at read time through on-chain lookup tables. The stack provides no IPFS helpers, no off-chain pointer patterns, and no centralized URI patterns — these are out of scope by design.\n\nThe motivation is archival: token data survives even if NFT Culture or any third party disappears. For fine art editions — Keith Haring, Robert Alice — the artwork itself is preserved on-chain, not a pointer to it.',
+      },
+      {
+        heading: 'Contract Architecture',
+        body: 'The stack enforces a strict three-contract separation for every deployment:\n\n• NFT Contract (Consumer) — owns tokens; delegates tokenURI() to the metadata producer\n• Metadata Contract (Producer) — assembles and returns JSON strings; delegates image and animation values to the art producer\n• Art Contract (Art Producer) — holds or constructs image data; returns data URIs\n\nAn optional fourth contract — the Mapper — resolves (collection, tokenId) → tokenType. When token type assignment is non-trivial (multi-collection, edition-based, range-keyed), it is factored into a dedicated contract rather than embedded in metadata logic.\n\nThe producer-consumer boundary is defined by interface contracts. Producers implement an interface; consumers reference that interface and call through it. The consumer never imports the producer\'s concrete type. This enables upgradeability without redeploying the NFT contract — art data may need to be uploaded post-mint, metadata fields refined before launch, or rendering updated without disturbing the immutable token ledger.\n\nTwo interface generations are in active use. V1 uses a single-collection assumption and uint256 token types. V2 adds an address collection parameter throughout (enabling one producer contract to serve multiple NFT contracts), promotes token types to uint64, and passes an extraData parameter — typically an entropy seed — from the NFT contract to the art producer for generative rendering.',
+      },
+      {
+        heading: 'Art Production',
+        body: 'Two concrete art manager patterns cover the range of supported project types.\n\nPNGBackedSVGArtManager stores base64-encoded PNG data in contract storage, written via transactions post-deploy. At read time it wraps the PNG in an SVG document and returns a data:image/svg+xml;base64,... URI. The SVG is never stored — it is constructed on every read. SVG construction is delegated to a pluggable, stateless ISVGConstructor contract (implementations exist for general use, pixel art V1 with crisp-edges rendering, and pixel art V2 using a XHTML foreignObject for better Safari compatibility), so the rendering approach can be upgraded without redeploying the art contract.\n\nDynamicHTMLArtManager is used for generative art projects where the image is a full HTML page containing JavaScript that renders the artwork. The art contract holds references to named script components in Scripty.sol\'s on-chain content store. At read time, ScriptyBuilderV2 fetches and assembles those components, wraps them in HTML, and returns a data:text/html;base64,... URI. The V2 consumer interface passes an entropy seed through to the art producer as extraData, allowing the generative script to produce a unique piece for each token with no off-chain randomness source.\n\nFor archival projects, additional native file formats can be stored on-chain alongside the primary art and retrieved byte-for-byte from the contract — enabling true digital archival of original source files, not just rendered output.',
+      },
+      {
+        heading: 'Metadata Production',
+        body: 'The metadata producer builds ERC-721 JSON strings entirely on-chain using a structured template system. Storage is divided into two levels: CollectionAttributesV2 holds collection-level fields (attribute names, shared description parts, external URL), while DynamicAttributesV2 holds per-token-type definitions (title, per-type description parts, attribute values).\n\nDescription composition uses a configurable insertion system: a sharedDescriptionParts array defines the collection-level template, while per-token-type tokenDescriptionParts arrays are inserted at configurable positions within the shared parts. This produces rich per-type descriptions with minimal storage overhead.\n\nAttribute values support a %tokenId% placeholder replaced at read time with the actual token ID — avoiding per-token storage for traits derived from token ID. A two-phase attribute reveal is also supported: tokens initially return placeholder metadata while off-chain rendering determines trait assignments; the owner then writes final trait maps on-chain in batch, and the metadata contract switches automatically to full attributes on the next read, with no additional transaction required from holders.',
+      },
+      {
+        heading: 'Deployments',
+        body: 'The stack has been proven across three production deployments on Ethereum mainnet, each extending the architecture.\n\nKeith Haring: Pixel Pioneer (Sep 2023, Christie\'s) — V1 stack; first production deployment. Five 1/1 artworks created by Haring in 1987 on an Amiga computer, recovered from the New York Public Library\'s archive. The art contract stores multiple formats on-chain — SVG, PNG, and the original Amiga IFF and Apple PICT files via Scripty.sol — making it a true digital archive. Displayed at Christie\'s galleries globally and auctioned on the Christie\'s platform.\n\nSOURCE [On NFTs] by Robert Alice (Mar 2024, Christie\'s 3.0) — V2 stack; first generative deployment. 400-token collection using DynamicHTMLArtManager with Scripty.sol. Entropy is generated at mint time; an off-chain rendering pipeline determines traits, which are written on-chain in batch. Minting gated through the Christie\'s marketplace contract via the privileged minter pattern. Two-phase metadata reveal.\n\nOn NFTs Book Companion NFTs (May 2024, Taschen / Rocketship) — V2 stack; multi-artist architecture. Four NFT contracts (Refik Anadol, Dmitri Cherniak, Sofia Crespo, Osinachi) sharing one metadata contract, one art contract, and one mapper — demonstrating the multi-collection producer pattern in production. Book purchasers claimed NFTs via salted merkle-tree-verified redemption codes.\n\nAcross the three deployments: approximately 136 contracts, 120+ test files.',
+      },
+    ],
+  },
+  {
+    id: 'dr3am-labs-cloud',
+    title: 'Dr3am Labs Cloud',
+    description:
+      "Internal backend platform for NFT minting microsites and generative art projects. Provides a minting API, administrative tools, client portal, and managed cloud infrastructure — enabling more complex live rendering and artist curation workflows than standard platforms, while preserving IPFS archival guarantees.\n\nDual App Engine architecture on GCP: a default service handles static content while an API service provides RESTful endpoints, with custom domain routing via dispatch.yaml. Runs Node.js with TypeScript and Fastify, backed by Firebase Firestore and Google Cloud Storage. AWS is used for CDN and customer-facing asset hosting.",
+    tags: ['Node.js', 'TypeScript', 'Fastify', 'GCP', 'App Engine', 'Firebase', 'AWS'],
+    links: [],
+    status: 'live',
+    year: '2022–present',
+    org: 'NFT Culture',
+  },
+  {
     id: 'testarossa',
     title: 'Testarossa',
     description:
-      'A templating framework for building smart contracts and mint microsites. Enables rapid, standardized deployment of NFT project infrastructure with consistent, auditable patterns across projects.',
-    tags: ['Framework', 'Solidity', 'JavaScript', 'Templating'],
+      "NFT Culture's proprietary smart contract and minting UI generation engine — a suite of CLI tools that automate creation of complete, production-ready NFT project infrastructure.\n\nThe smart contract generator conducts a project survey, then outputs a full Hardhat development environment: a contract tailored to the project parameters, deployment scripts, and a test suite that can be run immediately to verify correctness and harden against common vulnerabilities. The minting UI generator does the same for front ends — outputting Angular component projects that can be bundled and dropped into WordPress, NextJS, Vercel, or similar platforms with no incompatibilities.\n\nThree guiding principles shape the architecture: independence per project (each output is a standalone dev environment, separately licensable); developer as end user (rich libraries, consistent patterns, low cognitive load); and automation with maximum flexibility (designed for bespoke top-tier art projects where Manifold, Mojito, or ThirdWeb fall short). Wholly proprietary and owned by NFT Culture.",
+    tags: ['CLI', 'Solidity', 'TypeScript', 'Angular', 'Hardhat', 'Code Generation'],
     links: [],
     status: 'live',
-    year: '2022–2023',
+    year: '2022–2025',
     org: 'NFT Culture',
   },
   {
     id: 'shakespeare',
     title: 'Shakespeare',
     description:
-      'Python-based generative art construction library for building layered NFT artwork. Handles trait systems, rarity weights, and large-scale image composition pipelines.',
-    tags: ['Python', 'Generative Art', 'NFT'],
+      "Rapidly configurable, Python-based generative art construction library for building layered NFT artwork. Handles trait systems, rarity weights, layer composition, and large-scale image generation pipelines — enabling deployment of NFTs with nearly unlimited customization based on the artist's scope and vision.",
+    tags: ['Python', 'Generative Art', 'NFT', 'Image Generation'],
     links: [],
     status: 'live',
-    year: '2021–2022',
-    org: 'NFT Culture',
-  },
-  {
-    id: 'dr3am-labs-cloud',
-    title: 'Dr3am Labs Cloud',
-    description:
-      'Internal backend platform for NFT minting microsites and generative art projects. Provides instant reveal, metadata APIs, and asset delivery as a managed service — enabling more complex live rendering and artist curation workflows while preserving IPFS archival guarantees. Dual App Engine architecture (static + API services) on GCP, backed by Firestore and Cloud Storage.',
-    tags: ['Node.js', 'TypeScript', 'Fastify', 'GCP', 'App Engine', 'Firestore'],
-    links: [],
-    status: 'live',
-    year: '2022–present',
+    year: '2021–2025',
     org: 'NFT Culture',
   },
 ];

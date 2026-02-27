@@ -66,6 +66,16 @@
         ↗ {{ link.label }}
       </a>
     </div>
+
+    <!-- Detail link — expanded only, when detail content is available -->
+    <div v-if="isExpanded && hasDetail" class="px-4 pb-4 pt-1 border-t border-shell-border/40">
+      <button
+        class="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
+        @click.stop="emit('detail')"
+      >
+        → view details
+      </button>
+    </div>
   </div>
 </template>
 
@@ -74,7 +84,8 @@ import { ref, computed } from 'vue';
 import { ChevronDown } from 'lucide-vue-next';
 import type { Project } from '../data/portfolio';
 
-const props = defineProps<{ project: Project; initialExpanded?: boolean }>();
+const props = defineProps<{ project: Project; initialExpanded?: boolean; hasDetail?: boolean }>();
+const emit = defineEmits<{ detail: [] }>();
 
 const isExpanded = ref(props.initialExpanded ?? false);
 const COLLAPSED_TAG_LIMIT = 3;
