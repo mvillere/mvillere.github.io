@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, inject, type Ref } from 'vue';
+import { ref, inject, onMounted, type Ref } from 'vue';
 import { techPlatforms } from '../../data/portfolio';
 import type { Project } from '../../data/portfolio';
 import ProjectCard from '../ProjectCard.vue';
@@ -33,6 +33,13 @@ import TechnologyDetail from '../TechnologyDetail.vue';
 const subPath = inject<Ref<string | null>>('subPath');
 
 const selectedItem = ref<Project | null>(null);
+
+onMounted(() => {
+  if (subPath?.value) {
+    const match = techPlatforms.find((p) => p.id === subPath.value);
+    if (match) selectedItem.value = match;
+  }
+});
 
 function selectItem(project: Project) {
   selectedItem.value = project;
