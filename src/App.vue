@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen overflow-hidden bg-shell-bg font-mono">
-    <Sidebar :tabs="tabs" :active-tab="activeTabId" @select="activeTabId = $event" />
+    <Sidebar :tabs="tabs" :active-tab="activeTabId" @select="selectTab" />
 
     <!-- Content area -->
     <div class="flex flex-col flex-1 overflow-hidden">
@@ -143,10 +143,11 @@ watch([activeTabId, subPath], ([tabId, detail]) => {
   }
 });
 
-// Reset detail when switching tabs
-watch(activeTabId, () => {
+// User-initiated tab switch — clears any active detail view
+function selectTab(id: string) {
+  activeTabId.value = id;
   subPath.value = null;
-});
+}
 
 const currentTab = computed(() => tabs.find((t) => t.id === activeTabId.value) ?? tabs[0]);
 
