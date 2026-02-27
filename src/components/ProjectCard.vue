@@ -27,10 +27,21 @@
     </div>
 
     <!-- Description -->
-    <div class="px-4 pb-3 flex-1">
+    <div class="px-4 flex-1" :class="isExpanded && hasDetail ? 'pb-2' : 'pb-3'">
       <p class="text-xs text-slate-400 leading-relaxed" :class="{ 'line-clamp-2': !isExpanded, 'whitespace-pre-line': isExpanded }">
         {{ project.description }}
       </p>
+    </div>
+
+    <!-- Detail link — immediately below description -->
+    <div v-if="isExpanded && hasDetail" class="px-4 pb-3">
+      <hr class="border-shell-border/40 mb-2.5" />
+      <button
+        class="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
+        @click.stop="emit('detail')"
+      >
+        → view whitepaper
+      </button>
     </div>
 
     <!-- Role attribution — expanded only -->
@@ -65,16 +76,6 @@
       >
         ↗ {{ link.label }}
       </a>
-    </div>
-
-    <!-- Detail link — expanded only, when detail content is available -->
-    <div v-if="isExpanded && hasDetail" class="px-4 pb-4 pt-1 border-t border-shell-border/40">
-      <button
-        class="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
-        @click.stop="emit('detail')"
-      >
-        → view details
-      </button>
     </div>
   </div>
 </template>

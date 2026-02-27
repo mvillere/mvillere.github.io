@@ -1,5 +1,8 @@
 // ─── Skills ───────────────────────────────────────────────────────────────────
 // Four groups rendered in order: Leadership → AI → Technical → Domains.
+// Use SKILL_LINE_BREAK as a sentinel to force a visual line break in flex-wrap.
+
+export const SKILL_LINE_BREAK = '__break__';
 
 export interface SkillGroup {
   id: string;
@@ -42,29 +45,20 @@ export const skillGroups: SkillGroup[] = [
     id: 'technical',
     label: 'Technical',
     skills: [
-      'TypeScript',
-      'JavaScript',
-      'Python',
-      'Solidity',
-      'Vue.js',
-      'React',
-      'Angular',
-      'Node.js',
-      'Hardhat',
-      'Ethers.js',
-      'Web3.js',
-      'Alchemy',
-      'Firebase',
-      'GCP',
-      'AWS',
-      'Docker',
-      'GitHub Actions',
-      'CI/CD',
-      'REST APIs',
-      'GraphQL',
-      'PostgreSQL',
-      'SaaS Architecture',
-      'Microservices',
+      // Web2
+      'TypeScript', 'JavaScript', 'Python', 'Vue.js', 'React', 'Angular', 'Node.js',
+      SKILL_LINE_BREAK,
+      // Cloud
+      'GCP', 'AWS', 'Firebase', 'Alchemy',
+      SKILL_LINE_BREAK,
+      // Web3
+      'Solidity', 'Ethers.js', 'Web3.js', 'Hardhat',
+      SKILL_LINE_BREAK,
+      // DevOps
+      'Docker', 'GitHub Actions', 'CI/CD',
+      SKILL_LINE_BREAK,
+      // Architectural
+      'REST APIs', 'GraphQL', 'PostgreSQL', 'SaaS Architecture', 'Microservices',
     ],
   },
   {

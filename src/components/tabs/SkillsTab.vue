@@ -7,18 +7,20 @@
       </div>
 
       <div class="flex flex-wrap gap-2">
-        <span
-          v-for="skill in group.skills"
-          :key="skill"
-          class="text-xs px-2.5 py-1 rounded border border-shell-border bg-shell-card text-slate-300"
-        >
-          {{ skill }}
-        </span>
+        <template v-for="(skill, i) in group.skills" :key="i">
+          <div v-if="skill === SKILL_LINE_BREAK" class="w-full" />
+          <span
+            v-else
+            class="text-xs px-2.5 py-1 rounded border border-shell-border bg-shell-card text-slate-300"
+          >
+            {{ skill }}
+          </span>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { skillGroups } from '../../data/skills';
+import { skillGroups, SKILL_LINE_BREAK } from '../../data/skills';
 </script>

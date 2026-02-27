@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, provide, watch, type Component } from 'vue';
+import { ref, computed, provide, watch, onMounted, type Component } from 'vue';
 import { Terminal, BrainCircuit, FolderOpen, GitBranch, Layers, FileText, Home } from 'lucide-vue-next';
 
 import Sidebar from './components/Sidebar.vue';
@@ -111,10 +111,39 @@ const tabs: TabDef[] = [
   },
 ];
 
+const validTabIds = new Set(tabs.map((t) => t.id));
+
+function parseHash(hash: string): { tabId: string; detail: string | null } {
+  const raw = hash.startsWith('#') ? hash.slice(1) : hash;
+  const [tabId, detail = null] = raw.split('/');
+  return { tabId: validTabIds.has(tabId) ? tabId : 'about', detail };
+}
+
+function applyHash(hash: string) {
+  const { tabId, detail } = parseHash(hash);
+  activeTabId.value = tabId;
+  subPath.value = detail;
+}
+
 const activeTabId = ref('about');
 const subPath = ref<string | null>(null);
 provide('subPath', subPath);
 
+// Restore state from URL on load
+onMounted(() => {
+  applyHash(window.location.hash);
+  window.addEventListener('popstate', () => applyHash(window.location.hash));
+});
+
+// Keep URL in sync with navigation
+watch([activeTabId, subPath], ([tabId, detail]) => {
+  const hash = detail ? `#${tabId}/${detail}` : `#${tabId}`;
+  if (window.location.hash !== hash) {
+    history.pushState(null, '', hash);
+  }
+});
+
+// Reset detail when switching tabs
 watch(activeTabId, () => {
   subPath.value = null;
 });
