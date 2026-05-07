@@ -51,7 +51,7 @@ export const nftContracts: Project[] = [
     id: 'nft-cult',
     title: 'The NFT Cult',
     description:
-      "NFT Culture's in-house supporter token — one of the earliest projects under the banner and a hands-on proof-of-concept for production-quality EVM mechanics.\n\nThe contract featured three bespoke on-chain capabilities: Forging let holders combine owned tokens via a mathematical formula embedded in the contract — converting two silvers into a gold, merging cross-tier tokens into hybrids, or unlocking pieces that were never directly mintable. Burn Minting gifted holders of 32+ tokens a special multicolored piece created by the artist. Extensible Artwork allowed new token types to be added post-launch without a contract upgrade; when forging was activated roughly one month after mint, the Justice character became unlockable by combining three unrelated silvers.\n\nTwo companion interfaces shipped alongside the contract: a mint app (Angular + ethers v5 + Alchemy, embedded in a WordPress site) and a forge app that let holders browse their wallet contents and select tokens for combining. No backend.",
+      "NFT Culture's in-house supporter token, one of the earliest projects under the banner and a hands-on proof-of-concept for production-quality EVM mechanics.\n\nThe contract featured three bespoke on-chain capabilities: Forging let holders combine owned tokens via a mathematical formula embedded in the contract (converting two silvers into a gold, merging cross-tier tokens into hybrids, or unlocking pieces that were never directly mintable). Burn Minting gifted holders of 32+ tokens a special multicolored piece created by the artist. Extensible Artwork allowed new token types to be added post-launch without a contract upgrade; when forging was activated roughly one month after mint, the Justice character became unlockable by combining three unrelated silvers.\n\nTwo companion interfaces shipped alongside the contract: a mint app (Angular + ethers v5 + Alchemy, embedded in a WordPress site) and a forge app that let holders browse their wallet contents and select tokens for combining. No backend.",
     tags: ['Solidity', 'ERC-721', 'Ethereum', 'Angular', 'Ethers.js', 'NFT Culture'],
     links: [
       { label: 'Contract', url: 'https://etherscan.io/address/0x5d75c1b764afd64fe02a28b5eff79e2f81db5bad' },
@@ -422,6 +422,17 @@ export const openSourceTools: Project[] = [
 // Publicly released libraries and tools (top of Open Source tab).
 
 export const openSourceRepos: Project[] = [
+  {
+    id: 'bbs',
+    title: 'BBS - Bug-Based Steganography',
+    description:
+      'A proof-of-concept steganographic technique that hides messages inside intentionally buggy code. The hidden message surfaces only when the code runs in its broken state. Fixing the obvious bug destroys the content irreversibly. Resistant to standard AI tooling, which tends to correct bugs rather than preserve them. Includes a working HTML/JS demonstration, a technical whitepaper, and agent instructions for authorized interpretation.',
+    tags: ['JavaScript', 'HTML', 'Steganography', 'Cryptography', 'AI'],
+    links: [{ label: 'GitHub', url: 'https://github.com/mvillere/bbs' }],
+    status: 'live',
+    year: '2026',
+    role: 'owner',
+  },
   {
     id: 'nftc-contract-audit',
     title: 'nftc-contract-audit',
