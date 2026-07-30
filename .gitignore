@@ -25,6 +25,12 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Seed docs derived from the private nftc-contracts-private repo.
+# They source the Chainnative copy in src/data/portfolio.ts. This repo is
+# public, so the files stay local.
+docs/ChainnativeLibrary.md
+docs/ChainnativeImplementation.md
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
