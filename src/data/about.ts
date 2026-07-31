@@ -14,7 +14,7 @@
 
 export type BioVariant = 'short' | 'medium' | 'long';
 
-export const activeBioVariant: BioVariant = 'short';
+export const activeBioVariant: BioVariant = 'long';
 
 // ⚠️  If you change the 'short' variant, also update the matching meta description in
 //     index.html (og:description, twitter:description, and name="description").
