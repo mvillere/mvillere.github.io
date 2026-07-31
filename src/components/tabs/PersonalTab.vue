@@ -6,41 +6,17 @@
         <span>cat personal.txt</span>
       </div>
 
-      <div class="space-y-3">
-        <div
-          v-for="section in sections"
-          :key="section.id"
-          class="border border-dashed border-line/60 rounded bg-card/40 px-4 py-3"
-        >
-          <p class="text-xs font-medium text-muted mb-1">{{ section.label }}</p>
-          <p class="text-xs text-faint leading-relaxed">{{ section.placeholder }}</p>
-        </div>
+      <div class="border border-line rounded bg-card p-5">
+        <p class="font-prose text-sm text-body leading-relaxed whitespace-pre-line">{{ personal }}</p>
       </div>
     </div>
+
+    <!-- Shows up only on the TRS-80 theme. See DriverDemo.vue. -->
+    <DriverDemo />
   </div>
 </template>
 
 <script setup lang="ts">
-const sections = [
-  {
-    id: 'family',
-    label: 'Family',
-    placeholder: '[PLACEHOLDER]',
-  },
-  {
-    id: 'ranch',
-    label: 'Ranch Life',
-    placeholder: '[PLACEHOLDER]',
-  },
-  {
-    id: 'home-automation',
-    label: 'Home Automation',
-    placeholder: '[PLACEHOLDER]',
-  },
-  {
-    id: 'interests',
-    label: 'Other Interests',
-    placeholder: '[PLACEHOLDER]',
-  },
-];
+import { personal } from '../../data/about';
+import DriverDemo from '../DriverDemo.vue';
 </script>

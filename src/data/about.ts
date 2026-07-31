@@ -20,6 +20,19 @@ export const activeBioVariant: BioVariant = 'short';
 //     index.html (og:description, twitter:description, and name="description").
 //     Those tags are hardcoded and will drift otherwise.
 
+// ─── Personal ─────────────────────────────────────────────────────────────────
+// Deliberately not run through cwlint. The writing system is built for
+// technical prose, and applying it here would strip out the contractions and
+// rhythm that make this sound like a person rather than a spec.
+//
+// Earlier drafts split this into Family / Ranch Life / Home Automation /
+// Other Interests. Kept as one block for now. Bring the sections back when
+// there is enough to say to fill them.
+
+export const personal = `Michael lives in Frisco, Texas with his wife and their two daughters.\n\n\
+Outside of work he's usually under the hood of something, chipping away at a project at the \
+family ranch on the Brazos, or building something wild with a crew of AI agents.`;
+
 export const bio: Record<BioVariant, string> = {
   short: `Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years of \
 experience building and managing software teams across SaaS, EdTech, and Web3.`,
