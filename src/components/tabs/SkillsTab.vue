@@ -1,5 +1,6 @@
 <template>
-  <div class="max-w-2xl space-y-8">
+  <!-- 5xl: the AI craft row is six tags and needs ~960px to stay on one line. -->
+  <div class="max-w-5xl space-y-8">
     <div v-for="group in skillGroups" :key="group.id">
       <div class="flex items-center gap-2 text-xs text-faint mb-4">
         <span class="text-accent">$</span>
