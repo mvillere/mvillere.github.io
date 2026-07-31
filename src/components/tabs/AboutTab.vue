@@ -2,40 +2,40 @@
   <div class="max-w-2xl space-y-8">
     <!-- whoami -->
     <div>
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>whoami</span>
       </div>
-      <div class="border border-shell-border rounded bg-shell-card p-5">
+      <div class="border border-line rounded bg-card p-5">
         <div class="flex items-baseline gap-2 mb-1">
-          <span class="text-base font-semibold text-slate-100">Michael Villere</span>
-          <span class="text-sm text-slate-500">@NiftyMike</span>
+          <span class="font-prose text-lg font-semibold text-ink">Michael Villere</span>
+          <span class="text-sm text-muted">@NiftyMike</span>
         </div>
-        <p class="text-xs text-cyan-400 mb-3">Engineering Leader · Co-Founder &amp; CTO, NFT Culture</p>
-        <p class="text-sm text-slate-400 leading-relaxed whitespace-pre-line">{{ activeBio }}</p>
+        <p class="text-xs text-accent mb-3">Engineering Leader · Co-Founder &amp; CTO, NFT Culture</p>
+        <p class="font-prose text-sm text-body leading-relaxed whitespace-pre-line">{{ activeBio }}</p>
       </div>
     </div>
 
     <!-- Current roles -->
     <div>
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>cat current-roles.txt</span>
       </div>
       <div class="space-y-3">
         <div
           v-for="role in currentRoles"
           :key="role.id"
-          class="border border-shell-border rounded bg-shell-card p-4"
+          class="border border-line rounded bg-card p-4"
         >
           <div class="flex items-start justify-between gap-4 mb-2">
             <div>
-              <p class="text-sm font-medium text-slate-200">{{ role.title }}</p>
-              <p class="text-xs text-cyan-400 mt-0.5">{{ role.company }}</p>
+              <p class="text-sm font-medium text-ink">{{ role.title }}</p>
+              <p class="text-xs text-accent mt-0.5">{{ role.company }}</p>
             </div>
-            <span class="text-[11px] text-slate-600 shrink-0 mt-0.5">{{ role.period }}</span>
+            <span class="text-[11px] text-faint shrink-0 mt-0.5">{{ role.period }}</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">{{ role.description }}</p>
+          <p class="font-prose text-[12.5px] text-body leading-relaxed">{{ role.description }}</p>
           <div v-if="role.links?.length" class="flex flex-wrap gap-4 mt-3">
             <a
               v-for="link in role.links"
@@ -43,7 +43,7 @@
               :href="link.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+              class="text-xs text-accent hover:text-accent-soft transition-colors"
             >
               ↗ {{ link.label }}
             </a>
@@ -54,25 +54,25 @@
 
     <!-- Past roles -->
     <div>
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>cat past-roles.txt</span>
       </div>
       <div class="space-y-2">
         <div
           v-for="role in pastRoles"
           :key="role.id"
-          class="border border-shell-border/60 rounded bg-shell-card/60 px-4 py-3"
+          class="border border-line/60 rounded bg-card/60 px-4 py-3"
         >
           <div class="flex items-start justify-between gap-4">
             <div>
-              <p class="text-xs font-medium text-slate-300">{{ role.title }}</p>
-              <p class="text-xs text-slate-500 mt-0.5">{{ role.company }}</p>
-              <p v-if="role.description" class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p class="text-xs font-medium text-body">{{ role.title }}</p>
+              <p class="text-xs text-muted mt-0.5">{{ role.company }}</p>
+              <p v-if="role.description" class="font-prose text-[12.5px] text-muted mt-1.5 leading-relaxed">
                 {{ role.description }}
               </p>
             </div>
-            <span class="text-[11px] text-slate-700 shrink-0 mt-0.5">{{ role.period }}</span>
+            <span class="text-[11px] text-ghost shrink-0 mt-0.5">{{ role.period }}</span>
           </div>
         </div>
       </div>
@@ -80,23 +80,23 @@
 
     <!-- Education -->
     <div>
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>cat education.txt</span>
       </div>
-      <div class="border border-shell-border/60 rounded bg-shell-card/60 px-4 py-3 flex items-center justify-between gap-4">
+      <div class="border border-line/60 rounded bg-card/60 px-4 py-3 flex items-center justify-between gap-4">
         <div>
-          <p class="text-xs font-medium text-slate-300">BS Computer Science</p>
-          <p class="text-xs text-slate-500 mt-0.5">University of Texas at Dallas</p>
+          <p class="text-xs font-medium text-body">BS Computer Science</p>
+          <p class="text-xs text-muted mt-0.5">University of Texas at Dallas</p>
         </div>
-        <span class="text-[11px] text-slate-700 shrink-0">2003</span>
+        <span class="text-[11px] text-ghost shrink-0">2003</span>
       </div>
     </div>
 
     <!-- Links -->
     <div>
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>ls links/</span>
       </div>
       <div class="flex flex-wrap gap-2">
@@ -106,9 +106,9 @@
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1.5 px-3 py-2 rounded border border-shell-border bg-shell-card text-xs text-slate-300 hover:text-cyan-400 hover:border-cyan-500/30 transition-all"
+          class="flex items-center gap-1.5 px-3 py-2 rounded border border-line bg-card text-xs text-body hover:text-accent hover:border-accent/30 transition-all"
         >
-          <span class="text-cyan-500 text-[11px]">↗</span>
+          <span class="text-accent text-[11px]">↗</span>
           {{ link.label }}
         </a>
       </div>

@@ -1,14 +1,14 @@
 <template>
   <aside
-    class="w-12 sm:w-[220px] flex-none flex flex-col h-full border-r border-shell-border bg-shell-sidebar select-none overflow-y-auto"
+    class="w-12 sm:w-[220px] flex-none flex flex-col h-full border-r border-line bg-rail select-none overflow-y-auto"
   >
     <!-- Brand -->
-    <div class="px-2 sm:px-4 py-4 border-b border-shell-border shrink-0">
+    <div class="px-2 sm:px-4 py-4 border-b border-line shrink-0">
       <div class="flex items-center justify-center sm:justify-start gap-2">
-        <span class="text-cyan-400 text-base leading-none">◈</span>
-        <span class="hidden sm:inline text-sm font-semibold text-slate-200 tracking-tight">mvillere</span>
+        <span class="text-accent text-base leading-none">{{ isTrs ? '▮' : '§' }}</span>
+        <span class="hidden sm:inline text-sm font-semibold text-ink tracking-tight">mvillere</span>
       </div>
-      <p class="hidden sm:block text-[11px] text-slate-600 mt-0.5 ml-[22px]">~/portfolio</p>
+      <p class="hidden sm:block text-[11px] text-faint mt-0.5 ml-[22px]">~/portfolio</p>
     </div>
 
     <!-- Navigation -->
@@ -25,16 +25,16 @@
         <component
           :is="tab.icon"
           :size="13"
-          :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
+          :class="activeTab === tab.id ? 'text-accent' : 'text-faint'"
           class="shrink-0 transition-colors"
         />
         <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
       <!-- Projects + Open Source (work group) -->
-      <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
+      <div class="sm:hidden h-px bg-line mx-1 my-3" />
       <div class="hidden sm:block px-1 pt-3 pb-1">
-        <div class="h-px bg-shell-border" />
+        <div class="h-px bg-line" />
       </div>
 
       <button
@@ -48,16 +48,16 @@
         <component
           :is="tab.icon"
           :size="13"
-          :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
+          :class="activeTab === tab.id ? 'text-accent' : 'text-faint'"
           class="shrink-0 transition-colors"
         />
         <span class="hidden sm:inline">{{ tab.label }}</span>
       </button>
 
       <!-- Content + Personal (other group) -->
-      <div class="sm:hidden h-px bg-shell-border mx-1 my-3" />
+      <div class="sm:hidden h-px bg-line mx-1 my-3" />
       <div class="hidden sm:block px-1 pt-3 pb-1">
-        <div class="h-px bg-shell-border" />
+        <div class="h-px bg-line" />
       </div>
 
       <button
@@ -71,7 +71,7 @@
         <component
           :is="tab.icon"
           :size="13"
-          :class="activeTab === tab.id ? 'text-cyan-400' : 'text-slate-600'"
+          :class="activeTab === tab.id ? 'text-accent' : 'text-faint'"
           class="shrink-0 transition-colors"
         />
         <span class="hidden sm:inline">{{ tab.label }}</span>
@@ -79,14 +79,19 @@
     </nav>
 
     <!-- Copyright — hidden on mobile -->
-    <div class="hidden sm:block shrink-0 px-4 py-3 border-t border-shell-border">
-      <p class="text-[10px] text-slate-700">© Michael Villere 2026</p>
+    <div class="hidden sm:block shrink-0 px-4 py-3 border-t border-line">
+      <p class="text-[10px] text-ghost">© Michael Villere 2026</p>
     </div>
   </aside>
 </template>
 
 <script setup lang="ts">
-import type { Component } from 'vue';
+import { computed, type Component } from 'vue';
+import { theme } from '../theme';
+
+// The brand mark follows the machine: a section sign for the catalogue,
+// a block cursor for the TRS-80.
+const isTrs = computed(() => theme.value === 'trs80');
 
 export interface TabConfig {
   id: string;
@@ -111,11 +116,11 @@ const otherGroup = props.tabs.filter((t) => t.group === 'other');
 <style scoped>
 .nav-item {
   @apply w-full flex items-center justify-center sm:justify-start gap-2.5 px-3 py-[7px] rounded
-         text-xs text-slate-400 border-l-2 border-transparent transition-colors duration-150
-         text-left hover:bg-shell-hover hover:text-slate-200;
+         text-xs text-body border-l-2 border-transparent transition-colors duration-150
+         text-left hover:bg-hover hover:text-ink;
 }
 
 .nav-item--active {
-  @apply bg-shell-active text-slate-100 border-cyan-400;
+  @apply bg-active text-ink border-accent;
 }
 </style>

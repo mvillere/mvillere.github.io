@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-2xl space-y-8">
     <div v-for="group in skillGroups" :key="group.id">
-      <div class="flex items-center gap-2 text-xs text-slate-600 mb-4">
-        <span class="text-cyan-400">$</span>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
         <span>man NiftyMike | grep '{{ group.id.toUpperCase() }}'</span>
       </div>
 
@@ -11,7 +11,7 @@
           <div v-if="skill === SKILL_LINE_BREAK" class="w-full" />
           <span
             v-else
-            class="text-xs px-2.5 py-1 rounded border border-shell-border bg-shell-card text-slate-300"
+            class="text-xs px-2.5 py-1 rounded border border-line bg-card text-body"
           >
             {{ skill }}
           </span>

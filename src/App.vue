@@ -1,20 +1,23 @@
 <template>
-  <div class="flex h-screen overflow-hidden bg-shell-bg font-mono">
+  <div class="flex h-screen overflow-hidden bg-ground font-mono">
     <Sidebar :tabs="tabs" :active-tab="activeTabId" @select="selectTab" />
 
     <!-- Content area -->
     <div class="flex flex-col flex-1 overflow-hidden">
       <!-- Tab header -->
-      <div class="shrink-0 px-6 py-4 border-b border-shell-border">
-        <div class="flex items-center gap-1.5 text-xs text-slate-600">
-          <span>~/portfolio</span>
-          <span>/</span>
-          <span class="text-slate-400">{{ breadcrumbPath }}</span>
-          <span class="cursor-blink" />
+      <div class="shrink-0 px-6 py-4 border-b border-line">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-1.5 text-xs text-faint min-w-0">
+            <span>~/portfolio</span>
+            <span>/</span>
+            <span class="text-body truncate">{{ breadcrumbPath }}</span>
+            <span class="cursor-blink" />
+          </div>
+          <ThemeSwitch />
         </div>
         <div class="flex items-center justify-between mt-1.5">
-          <h1 class="text-sm font-semibold text-slate-100">{{ currentTab.label }}</h1>
-          <span class="text-[11px] text-slate-600">{{ itemCount }}</span>
+          <h1 class="font-prose text-base font-semibold text-ink">{{ currentTab.label }}</h1>
+          <span class="text-[11px] text-faint">{{ itemCount }}</span>
         </div>
       </div>
 
@@ -32,6 +35,7 @@ import { Terminal, BrainCircuit, FolderOpen, GitBranch, Layers, FileText, Home }
 
 import Sidebar from './components/Sidebar.vue';
 import type { TabConfig } from './components/Sidebar.vue';
+import ThemeSwitch from './components/ThemeSwitch.vue';
 
 import AboutTab from './components/tabs/AboutTab.vue';
 import SkillsTab from './components/tabs/SkillsTab.vue';

@@ -6,8 +6,8 @@
     <!-- Header (click to expand/collapse) -->
     <div class="p-4 pb-2 cursor-pointer select-none" @click="isExpanded = !isExpanded">
       <div class="flex items-start gap-2">
-        <span class="text-cyan-400 text-sm leading-tight mt-px shrink-0">&gt;</span>
-        <h3 class="text-sm font-medium text-slate-200 leading-snug flex-1 min-w-0">
+        <span class="text-accent text-sm leading-tight mt-px shrink-0">&gt;</span>
+        <h3 class="font-prose text-sm font-semibold text-ink leading-snug flex-1 min-w-0">
           {{ project.title }}
         </h3>
         <div class="flex items-center gap-2 shrink-0 mt-0.5">
@@ -16,28 +16,28 @@
           </span>
           <ChevronDown
             :size="12"
-            class="text-slate-600 transition-transform duration-200"
+            class="text-faint transition-transform duration-200"
             :class="{ 'rotate-180': isExpanded }"
           />
         </div>
       </div>
-      <span v-if="project.year" class="block text-[11px] text-slate-600 mt-0.5 ml-4">
+      <span v-if="project.year" class="block text-[11px] text-faint mt-0.5 ml-4">
         {{ project.year }}<span v-if="project.chain"> · {{ project.chain }}</span>
       </span>
     </div>
 
     <!-- Description -->
     <div class="px-4 flex-1" :class="isExpanded && hasDetail ? 'pb-2' : 'pb-3'">
-      <p class="text-xs text-slate-400 leading-relaxed" :class="{ 'line-clamp-2': !isExpanded, 'whitespace-pre-line': isExpanded }">
+      <p class="font-prose text-[12.5px] text-body leading-relaxed" :class="{ 'line-clamp-2': !isExpanded, 'whitespace-pre-line': isExpanded }">
         {{ project.description }}
       </p>
     </div>
 
     <!-- Detail link — immediately below description -->
     <div v-if="isExpanded && hasDetail" class="px-4 pb-3">
-      <hr class="border-shell-border/40 mb-2.5" />
+      <hr class="border-line/40 mb-2.5" />
       <button
-        class="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
+        class="text-xs text-muted hover:text-accent transition-colors"
         @click.stop="emit('detail')"
       >
         → view whitepaper
@@ -46,7 +46,7 @@
 
     <!-- Role attribution — expanded only -->
     <div v-if="isExpanded && roleNote" class="px-4 pb-2">
-      <span class="text-[11px] text-slate-600 italic">{{ roleNote }}</span>
+      <span class="text-[11px] text-faint italic">{{ roleNote }}</span>
     </div>
 
     <!-- Tags -->
@@ -54,11 +54,11 @@
       <span
         v-for="tag in visibleTags"
         :key="tag"
-        class="text-[11px] px-1.5 py-0.5 rounded text-cyan-300 bg-cyan-950/30 border border-cyan-900/40"
+        class="text-[11px] px-1.5 py-0.5 rounded text-tag-ink bg-tag-bg border border-tag-line"
       >
         {{ tag }}
       </span>
-      <span v-if="!isExpanded && hiddenTagCount > 0" class="text-[11px] text-slate-600 px-1">
+      <span v-if="!isExpanded && hiddenTagCount > 0" class="text-[11px] text-faint px-1">
         +{{ hiddenTagCount }}
       </span>
     </div>
@@ -71,7 +71,7 @@
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+        class="text-xs text-accent hover:text-accent-soft transition-colors"
         @click.stop
       >
         ↗ {{ link.label }}
@@ -95,9 +95,9 @@ const isPlaceholder = computed(() => props.project.status === 'placeholder');
 
 const cardClasses = computed(() => {
   if (isPlaceholder.value) {
-    return 'border-dashed border-slate-800/60 bg-shell-card/40';
+    return 'border-dashed border-line/60 bg-card/40';
   }
-  return 'border-shell-border bg-shell-card hover:border-cyan-500/20 transition-colors';
+  return 'border-line bg-card hover:border-accent/20 transition-colors';
 });
 
 const statusText = computed(() => {
@@ -111,9 +111,9 @@ const statusText = computed(() => {
 
 const statusClasses = computed(() => {
   const map: Record<string, string> = {
-    live: 'text-green-400',
-    archived: 'text-slate-500',
-    'coming-soon': 'text-amber-400',
+    live: 'text-live',
+    archived: 'text-muted',
+    'coming-soon': 'text-warn',
   };
   return map[props.project.status] ?? '';
 });

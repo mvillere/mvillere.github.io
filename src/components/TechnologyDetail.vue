@@ -2,7 +2,7 @@
   <div class="max-w-2xl space-y-8">
     <!-- Back link -->
     <button
-      class="flex items-center gap-1 text-xs text-slate-500 hover:text-cyan-400 transition-colors"
+      class="flex items-center gap-1 text-xs text-muted hover:text-accent transition-colors"
       @click="emit('back')"
     >
       <ChevronLeft :size="12" />
@@ -12,10 +12,10 @@
     <!-- Header -->
     <div>
       <div class="flex items-start gap-2">
-        <span class="text-cyan-400 text-sm leading-tight mt-px shrink-0">&gt;</span>
-        <h1 class="text-base font-semibold text-slate-100 leading-snug">{{ project.title }}</h1>
+        <span class="text-accent text-sm leading-tight mt-px shrink-0">&gt;</span>
+        <h1 class="font-prose text-lg font-semibold text-ink leading-snug">{{ project.title }}</h1>
       </div>
-      <div class="ml-4 mt-1 flex items-center gap-3 text-[11px] text-slate-600">
+      <div class="ml-4 mt-1 flex items-center gap-3 text-[11px] text-faint">
         <span v-if="project.year">{{ project.year }}</span>
         <span v-if="project.org">· {{ project.org }}</span>
       </div>
@@ -26,7 +26,7 @@
       <span
         v-for="tag in project.tags"
         :key="tag"
-        class="text-[11px] px-1.5 py-0.5 rounded text-cyan-300 bg-cyan-950/30 border border-cyan-900/40"
+        class="text-[11px] px-1.5 py-0.5 rounded text-tag-ink bg-tag-bg border border-tag-line"
       >
         {{ tag }}
       </span>
@@ -39,18 +39,18 @@
       class="space-y-2.5"
     >
       <div class="flex items-center gap-3">
-        <span class="text-[10px] text-slate-600 font-medium tracking-widest uppercase shrink-0">
+        <span class="text-[10px] text-faint font-medium tracking-widest uppercase shrink-0">
           {{ section.heading }}
         </span>
-        <div class="h-px bg-shell-border flex-1" />
+        <div class="h-px bg-line flex-1" />
       </div>
-      <p class="text-xs text-slate-300 leading-relaxed whitespace-pre-line">{{ section.body }}</p>
+      <p class="font-prose text-[13px] text-body leading-relaxed whitespace-pre-line">{{ section.body }}</p>
     </div>
 
     <!-- Links -->
     <div
       v-if="project.links.length"
-      class="flex flex-wrap gap-4 pt-4 border-t border-shell-border/50"
+      class="flex flex-wrap gap-4 pt-4 border-t border-line/50"
     >
       <a
         v-for="link in project.links"
@@ -58,7 +58,7 @@
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+        class="text-xs text-accent hover:text-accent-soft transition-colors"
       >
         ↗ {{ link.label }}
       </a>
