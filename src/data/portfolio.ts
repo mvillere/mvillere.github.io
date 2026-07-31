@@ -423,14 +423,30 @@ export const openSourceTools: Project[] = [
 
 export const openSourceRepos: Project[] = [
   {
+    id: 'clean-writing-system',
+    title: 'Clean Writing System',
+    description:
+      'A writing system and linter that strip AI slop out of technical prose. The ruleset adapts Simplified Technical English for software work, covering README files, documentation, code comments, and commit messages.\n\nThe cwlint CLI scores text by violations per 100 words across 16 rules. Those rules cover em dashes, semicolons, passive voice, nominalizations, marketing adjectives, and filler. A build can fail on a score threshold. A writer can switch off any rule inline with an HTML comment.\n\nThe installer also writes the same ruleset into agent tooling. Claude Code, Cursor, and any reader of AGENTS.md then share one style guide rather than each inventing its own.',
+    tags: ['TypeScript', 'CLI', 'Linting', 'Technical Writing', 'AI', 'Developer Tools'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/mvillere/clean-writing-system' },
+      { label: 'npm', url: 'https://www.npmjs.com/package/clean-writing-lint' },
+    ],
+    status: 'live',
+    year: '2026',
+    featured: true,
+    role: 'owner',
+  },
+  {
     id: 'bbs',
     title: 'BBS - Bug-Based Steganography',
     description:
-      'A proof-of-concept steganographic technique that hides messages inside intentionally buggy code. The hidden message surfaces only when the code runs in its broken state. Fixing the obvious bug destroys the content irreversibly. Resistant to standard AI tooling, which tends to correct bugs rather than preserve them. Includes a working HTML/JS demonstration, a technical whitepaper, and agent instructions for authorized interpretation.',
+      'A proof of concept that hides a message inside deliberately buggy code. The message is readable only while the code runs in its broken state. Repair the obvious bug and the content is gone for good.\n\nThat fragility is the design. Standard AI tooling corrects bugs rather than preserving them. An agent asked to tidy the file will erase what it carries and never report it.\n\nThe repo ships a working HTML and JavaScript demonstration, a technical whitepaper, and agent instructions for authorized interpretation.',
     tags: ['JavaScript', 'HTML', 'Steganography', 'Cryptography', 'AI'],
     links: [{ label: 'GitHub', url: 'https://github.com/mvillere/bbs' }],
     status: 'live',
     year: '2026',
+    featured: true,
     role: 'owner',
   },
   {
