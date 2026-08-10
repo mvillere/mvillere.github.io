@@ -51,12 +51,12 @@ in 2021 and serves as CTO of its media brand and software consulting arm, NFT Cu
 Prior to founding NFT Culture, Michael spent 13 years as a Senior Software Development Manager at \
 Edmentum, where he led distributed engineering teams and served as principal architect on \
 large-scale K-12 SaaS platforms that collectively served over 15 million students across \
-approximately 20,000 schools, accounting for ~$50M in annual revenue.\n\n\
+approximately 20,000 schools.\n\n\
 An early and heavy adopter of AI development tooling, Michael brings hands-on experience \
 integrating AI-assisted workflows into engineering teams and believes the next significant \
 leverage point for engineering organizations is the systematic adoption of these practices \
 across their development staff.\n\n\
-His technical work spans the stack — from Solidity smart contracts (30+ deployments to Ethereum \
+His technical work spans the stack, from Solidity smart contracts (30+ deployments to Ethereum \
 mainnet and EVM networks, including Ian Cheng's 3FACE, acquired by the MoMA) to full-stack \
 minting platforms, backend infrastructure, and open source libraries. He holds a B.S. in \
 Computer Science from the University of Texas at Dallas.`,
