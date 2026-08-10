@@ -16,6 +16,27 @@
       </div>
     </div>
 
+    <!-- Links -->
+    <div>
+      <div class="flex items-center gap-2 text-xs text-faint mb-4">
+        <span class="text-accent">$</span>
+        <span>ls links/</span>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <a
+          v-for="link in links"
+          :key="link.label"
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 px-3 py-2 rounded border border-line bg-card text-xs text-body hover:text-accent hover:border-accent/30 transition-all"
+        >
+          <span class="text-accent text-[11px]">↗</span>
+          {{ link.label }}
+        </a>
+      </div>
+    </div>
+
     <!-- Current roles -->
     <div>
       <div class="flex items-center gap-2 text-xs text-faint mb-4">
@@ -71,6 +92,18 @@
               <p v-if="role.description" class="font-prose text-[12.5px] text-muted mt-1.5 leading-relaxed">
                 {{ role.description }}
               </p>
+              <div v-if="role.links?.length" class="flex flex-wrap gap-4 mt-2.5">
+                <a
+                  v-for="link in role.links"
+                  :key="link.label"
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs text-accent hover:text-accent-soft transition-colors"
+                >
+                  ↗ {{ link.label }}
+                </a>
+              </div>
             </div>
             <span class="text-[11px] text-ghost shrink-0 mt-0.5">{{ role.period }}</span>
           </div>
@@ -90,27 +123,6 @@
           <p class="text-xs text-muted mt-0.5">University of Texas at Dallas</p>
         </div>
         <span class="text-[11px] text-ghost shrink-0">2003</span>
-      </div>
-    </div>
-
-    <!-- Links -->
-    <div>
-      <div class="flex items-center gap-2 text-xs text-faint mb-4">
-        <span class="text-accent">$</span>
-        <span>ls links/</span>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <a
-          v-for="link in links"
-          :key="link.label"
-          :href="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-1.5 px-3 py-2 rounded border border-line bg-card text-xs text-body hover:text-accent hover:border-accent/30 transition-all"
-        >
-          <span class="text-accent text-[11px]">↗</span>
-          {{ link.label }}
-        </a>
       </div>
     </div>
   </div>
@@ -148,11 +160,14 @@ const currentRoles: Role[] = [
       { label: 'GitHub', url: 'https://github.com/NFTCulture' },
     ],
   },
+];
+
+const pastRoles: Role[] = [
   {
     id: 'rocketship',
     title: 'VP of Engineering',
     company: 'Rocketship',
-    period: 'Feb 2024 – present',
+    period: 'Feb 2024 – Mar 2026',
     description:
       'Creator of the Pizza Ninja community and the Ninjalerts app - a Web3 alerts and analytics platform for NFT collectors and traders.',
     links: [
@@ -161,9 +176,6 @@ const currentRoles: Role[] = [
       { label: 'GitHub', url: 'https://github.com/rocketshipapp' },
     ],
   },
-];
-
-const pastRoles: Role[] = [
   {
     id: 'edmentum',
     title: 'Senior Software Development Manager',
