@@ -38,7 +38,9 @@ export const bio: Record<BioVariant, string> = {
 experience building and managing software teams across SaaS, EdTech, and Web3.`,
 
   medium: `Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years of \
-experience across SaaS, EdTech, and Web3. He co-founded NFT Culture in 2021 and serves as CTO, \
+experience across SaaS, EdTech, and Web3. He is Co-Founder and CEO of SausageSoft, which builds \
+store-finder and account-tracking software for craft breweries and specialty food and beverage \
+producers. Before that he co-founded NFT Culture in 2021 and served as CTO, \
 and spent 13 years prior as a Senior Software Development Manager at Edmentum, leading distributed \
 teams on large-scale K-12 platforms serving over 15 million students. An early and heavy adopter \
 of AI development tooling, he brings deep experience both writing code and managing the engineering \
@@ -46,8 +48,11 @@ organizations that ship it. His technical work includes 30+ smart contracts depl
 — among them Ian Cheng's 3FACE (2022), acquired by the MoMA.`,
 
   long: `Michael Villere is a seasoned engineering leader and entrepreneur with 20+ years of \
-experience building and managing software across SaaS, EdTech, and Web3. He co-founded NFT Culture \
-in 2021 and serves as CTO of its media brand and software consulting arm, NFT Culture Labs.\n\n\
+experience building and managing software across SaaS, EdTech, and Web3. He is Co-Founder and \
+CEO of SausageSoft, which helps independent craft breweries and specialty food and beverage \
+producers show shoppers where to buy their products and keep track of every account.\n\n\
+He co-founded NFT Culture in 2021 and served as CTO of its media brand and software consulting \
+arm, NFT Culture Labs, until August 2026. He remains a major shareholder.\n\n\
 Prior to founding NFT Culture, Michael spent 13 years as a Senior Software Development Manager at \
 Edmentum, where he led distributed engineering teams and served as principal architect on \
 large-scale K-12 SaaS platforms that collectively served over 15 million students across \

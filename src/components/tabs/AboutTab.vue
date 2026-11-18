@@ -11,7 +11,7 @@
           <span class="font-prose text-lg font-semibold text-ink">Michael Villere</span>
           <span class="text-sm text-muted">@NiftyMike</span>
         </div>
-        <p class="text-xs text-accent mb-3">Engineering Leader · Co-Founder &amp; CTO, NFT Culture</p>
+        <p class="text-xs text-accent mb-3">Engineering Leader · Co-Founder and CEO, SausageSoft</p>
         <p class="font-prose text-sm text-body leading-relaxed whitespace-pre-line">{{ activeBio }}</p>
       </div>
     </div>
@@ -149,10 +149,22 @@ interface Link {
 
 const currentRoles: Role[] = [
   {
+    id: 'sausagesoft',
+    title: 'Co-Founder and CEO',
+    company: 'SausageSoft',
+    period: 'Jun 2026 – present',
+    description:
+      "SausageSoft helps independent craft breweries and specialty food and beverage producers show shoppers where to buy their products and keep track of every account. SausageFinder is a branded product finder for your website, social posts, and newsletters that shows which stores carry your products. SausageCRM puts your accounts on a sales map, flags stores that have gone quiet, and helps you hold on to your placements. Both run on the distributor reports you already receive, so there's no store list to maintain by hand.",
+    links: [{ label: 'sausagesoft.com', url: 'https://www.sausagesoft.com' }],
+  },
+];
+
+const pastRoles: Role[] = [
+  {
     id: 'nft-culture',
-    title: 'Co-Founder & CTO',
+    title: 'Co-Founder and CTO',
     company: 'NFT Culture / NFT Culture Labs',
-    period: '2021 – present',
+    period: '2021 – Aug 2026',
     description:
       'NFT Culture is a media brand at the intersection of art, culture, and the blockchain - delivering daily news, insights, and community coverage across NFTs, crypto art, and Web3. NFT Culture Labs is its software and consulting arm, building open source tooling and guiding businesses through Web3 product development.',
     links: [
@@ -160,9 +172,6 @@ const currentRoles: Role[] = [
       { label: 'GitHub', url: 'https://github.com/NFTCulture' },
     ],
   },
-];
-
-const pastRoles: Role[] = [
   {
     id: 'rocketship',
     title: 'VP of Engineering',
