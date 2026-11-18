@@ -52,7 +52,7 @@ experience building and managing software across SaaS, EdTech, and Web3. He is C
 CEO of SausageSoft, which helps independent craft breweries and specialty food and beverage \
 producers show shoppers where to buy their products and keep track of every account.\n\n\
 He co-founded NFT Culture in 2021 and served as CTO of its media brand and software consulting \
-arm, NFT Culture Labs, until August 2026. He remains a major shareholder.\n\n\
+arm, NFT Culture Labs, until August 2026.\n\n\
 Prior to founding NFT Culture, Michael spent 13 years as a Senior Software Development Manager at \
 Edmentum, where he led distributed engineering teams and served as principal architect on \
 large-scale K-12 SaaS platforms that collectively served over 15 million students across \
